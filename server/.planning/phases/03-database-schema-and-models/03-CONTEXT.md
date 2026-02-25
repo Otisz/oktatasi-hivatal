@@ -1,6 +1,6 @@
 # Phase 3: Database Schema and Models - Context
 
-**Gathered:** 2026-02-25
+**Gathered:** 2026-02-25 (updated)
 **Status:** Ready for planning
 
 <domain>
@@ -22,12 +22,19 @@ Five-table database schema (programs, program_subjects, applicants, applicant_ex
 - Cast applicant_bonus_points.category as plain string (no enum needed)
 - Cast program_subjects.required_level to ExamLevel enum (nullable)
 
+### Primary Key Strategy
+- All five tables use ordered UUIDs (Laravel's HasUuids trait with Str::orderedUuid())
+- Migrations use `$table->uuid('id')->primary()` instead of bigIncrements
+- Foreign key columns use `$table->foreignUuid('program_id')` / `$table->foreignUuid('applicant_id')`
+- All models include the `HasUuids` trait — route model binding resolves by UUID automatically
+- Define named UUID constants on models for seeded test data (e.g., Applicant::CASE_1_UUID) — Phase 4 seeder and Phase 8 tests reference applicants by these constants
+- API routes use UUID in URL: `/api/v1/applicants/{uuid}/score`
+
 ### Schema Conventions
 - Include Laravel timestamps (created_at, updated_at) on all tables
 - Foreign keys only — no CHECK constraints or unique constraints; validation lives in Value Objects and service layer
 - Default string(255) for all varchar columns (university, faculty, name, subject_name, etc.)
 - Use unsignedTinyInteger for percentage column on applicant_exam_results (documents 0-100 range intent)
-- Standard Laravel bigIncrements for primary keys
 
 ### Factory Design
 - Factories for all five models (Program, ProgramSubject, Applicant, ApplicantExamResult, ApplicantBonusPoint)
@@ -68,4 +75,4 @@ None — discussion stayed within phase scope
 ---
 
 *Phase: 03-database-schema-and-models*
-*Context gathered: 2026-02-25*
+*Context gathered: 2026-02-25 (updated)*
