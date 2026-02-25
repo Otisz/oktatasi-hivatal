@@ -101,62 +101,62 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DOM-01 | — | Pending |
-| DOM-02 | — | Pending |
-| DOM-03 | — | Pending |
-| DOM-04 | — | Pending |
-| DOM-05 | — | Pending |
-| DOM-06 | — | Pending |
-| DOM-07 | — | Pending |
-| DOM-08 | — | Pending |
-| DB-01 | — | Pending |
-| DB-02 | — | Pending |
-| DB-03 | — | Pending |
-| DB-04 | — | Pending |
-| DB-05 | — | Pending |
-| DB-06 | — | Pending |
-| DB-07 | — | Pending |
-| SEED-01 | — | Pending |
-| SEED-02 | — | Pending |
-| SEED-03 | — | Pending |
-| SEED-04 | — | Pending |
-| SEED-05 | — | Pending |
-| SEED-06 | — | Pending |
-| SEED-07 | — | Pending |
-| BIZ-01 | — | Pending |
-| BIZ-02 | — | Pending |
-| BIZ-03 | — | Pending |
-| BIZ-04 | — | Pending |
-| BIZ-05 | — | Pending |
-| VAL-01 | — | Pending |
-| VAL-02 | — | Pending |
-| VAL-03 | — | Pending |
-| VAL-04 | — | Pending |
-| VAL-05 | — | Pending |
-| API-01 | — | Pending |
-| API-02 | — | Pending |
-| API-03 | — | Pending |
-| API-04 | — | Pending |
-| API-05 | — | Pending |
-| TEST-01 | — | Pending |
-| TEST-02 | — | Pending |
-| TEST-03 | — | Pending |
-| TEST-04 | — | Pending |
-| TEST-05 | — | Pending |
-| TEST-06 | — | Pending |
-| TEST-07 | — | Pending |
-| TEST-08 | — | Pending |
-| TEST-09 | — | Pending |
-| TEST-10 | — | Pending |
-| TEST-11 | — | Pending |
-| TEST-12 | — | Pending |
-| TEST-13 | — | Pending |
+| DOM-01 | Phase 1 | Pending |
+| DOM-02 | Phase 1 | Pending |
+| DOM-03 | Phase 1 | Pending |
+| DOM-04 | Phase 2 | Pending |
+| DOM-05 | Phase 2 | Pending |
+| DOM-06 | Phase 2 | Pending |
+| DOM-07 | Phase 1 | Pending |
+| DOM-08 | Phase 5 | Pending |
+| DB-01 | Phase 3 | Pending |
+| DB-02 | Phase 3 | Pending |
+| DB-03 | Phase 3 | Pending |
+| DB-04 | Phase 3 | Pending |
+| DB-05 | Phase 3 | Pending |
+| DB-06 | Phase 3 | Pending |
+| DB-07 | Phase 3 | Pending |
+| SEED-01 | Phase 4 | Pending |
+| SEED-02 | Phase 4 | Pending |
+| SEED-03 | Phase 4 | Pending |
+| SEED-04 | Phase 4 | Pending |
+| SEED-05 | Phase 4 | Pending |
+| SEED-06 | Phase 4 | Pending |
+| SEED-07 | Phase 4 | Pending |
+| BIZ-01 | Phase 5 | Pending |
+| BIZ-02 | Phase 5 | Pending |
+| BIZ-03 | Phase 6 | Pending |
+| BIZ-04 | Phase 6 | Pending |
+| BIZ-05 | Phase 7 | Pending |
+| VAL-01 | Phase 7 | Pending |
+| VAL-02 | Phase 7 | Pending |
+| VAL-03 | Phase 7 | Pending |
+| VAL-04 | Phase 7 | Pending |
+| VAL-05 | Phase 7 | Pending |
+| API-01 | Phase 8 | Pending |
+| API-02 | Phase 8 | Pending |
+| API-03 | Phase 8 | Pending |
+| API-04 | Phase 8 | Pending |
+| API-05 | Phase 8 | Pending |
+| TEST-01 | Phase 2 | Pending |
+| TEST-02 | Phase 2 | Pending |
+| TEST-03 | Phase 2 | Pending |
+| TEST-04 | Phase 5 | Pending |
+| TEST-05 | Phase 5 | Pending |
+| TEST-06 | Phase 6 | Pending |
+| TEST-07 | Phase 6 | Pending |
+| TEST-08 | Phase 7 | Pending |
+| TEST-09 | Phase 8 | Pending |
+| TEST-10 | Phase 8 | Pending |
+| TEST-11 | Phase 8 | Pending |
+| TEST-12 | Phase 8 | Pending |
+| TEST-13 | Phase 8 | Pending |
 
 **Coverage:**
 - v1 requirements: 45 total
-- Mapped to phases: 0
-- Unmapped: 45
+- Mapped to phases: 45
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-25*
-*Last updated: 2026-02-25 after initial definition*
+*Last updated: 2026-02-25 after roadmap creation — all 45 requirements mapped*
