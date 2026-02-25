@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<ruleset name="Laravel PHPMD Rules"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+
+    <description>PHPMD ruleset for Laravel applications</description>
+
+    <!-- Exclude directories -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/bootstrap/cache/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/database/migrations/*</exclude-pattern>
+
+    <!-- Clean Code Rules -->
+    <rule ref="rulesets/cleancode.xml">
+        <!-- Allow static access for Laravel facades -->
+        <exclude name="StaticAccess"/>
+        <!-- Allow else expressions (common in Laravel) -->
+        <exclude name="ElseExpression"/>
+    </rule>
+
+    <!-- Code Size Rules -->
+    <rule ref="rulesets/codesize.xml">
+        <exclude name="ExcessiveMethodLength"/>
+        <exclude name="ExcessiveClassLength"/>
+        <exclude name="TooManyPublicMethods"/>
+    </rule>
+
+    <!-- Adjusted method length (Laravel controllers can be longer) -->
+    <rule ref="rulesets/codesize.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="50"/>
+        </properties>
+    </rule>
+
+    <!-- Adjusted class length -->
+    <rule ref="rulesets/codesize.xml/ExcessiveClassLength">
+        <properties>
+            <property name="minimum" value="500"/>
+        </properties>
+    </rule>
+
+    <!-- Adjusted public methods (Laravel models often have many) -->
+    <rule ref="rulesets/codesize.xml/TooManyPublicMethods">
+        <properties>
+            <property name="maxmethods" value="20"/>
+        </properties>
+    </rule>
+
+    <!-- Design Rules -->
+    <rule ref="rulesets/design.xml">
+        <!-- Allow coupling for Laravel's DI -->
+        <exclude name="CouplingBetweenObjects"/>
+    </rule>
+
+    <!-- Adjusted coupling (Laravel uses many dependencies) -->
+    <rule ref="rulesets/design.xml/CouplingBetweenObjects">
+        <properties>
+            <property name="maximum" value="20"/>
+        </properties>
+    </rule>
+
+    <!-- Naming Rules -->
+    <rule ref="rulesets/naming.xml">
+        <exclude name="ShortVariable"/>
+        <exclude name="LongVariable"/>
+    </rule>
+
+    <!-- Allow short variables like $id, $e, $q -->
+    <rule ref="rulesets/naming.xml/ShortVariable">
+        <properties>
+            <property name="minimum" value="2"/>
+            <property name="exceptions" value="id,e,q,i,j,k"/>
+        </properties>
+    </rule>
+
+    <!-- Adjusted long variable threshold -->
+    <rule ref="rulesets/naming.xml/LongVariable">
+        <properties>
+            <property name="maximum" value="30"/>
+        </properties>
+    </rule>
+
+    <!-- Unused Code Rules -->
+    <rule ref="rulesets/unusedcode.xml">
+        <!-- Exclude unused formal parameters (common in Laravel event handlers) -->
+        <exclude name="UnusedFormalParameter"/>
+    </rule>
+
+</ruleset>

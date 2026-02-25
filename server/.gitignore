@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/storage/pint.cache.json
+/storage/phpstan
+/storage/rector
+phpunit.xml

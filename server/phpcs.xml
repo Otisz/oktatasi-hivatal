@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<ruleset name="Laravel">
+    <description>PHP Code Sniffer ruleset for Laravel applications</description>
+
+    <!-- Paths to check -->
+    <file>app</file>
+    <file>config</file>
+    <file>database</file>
+    <file>routes</file>
+    <file>tests</file>
+
+    <!-- Exclude directories -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/bootstrap/cache/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/*.blade.php</exclude-pattern>
+    <exclude-pattern>*/public/*</exclude-pattern>
+
+    <!-- Arguments -->
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg value="sp"/>
+
+    <!-- Use PSR-12 as base -->
+    <rule ref="PSR12">
+        <!-- Allow closing tag omission (Laravel style) -->
+        <exclude name="PSR12.Files.FileHeader.IncorrectOrder"/>
+        <!-- Allow concatenation without spaces -->
+        <exclude name="PSR12.Operators.OperatorSpacing"/>
+    </rule>
+
+    <!-- Line length: warn at 120, error at 150 -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="150"/>
+        </properties>
+    </rule>
+
+    <!-- Array syntax: use short arrays -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+    <!-- Disallow Yoda conditions -->
+    <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
+
+    <!-- Require trailing commas in multi-line arrays -->
+    <rule ref="Generic.Arrays.ArrayIndent"/>
+
+    <!-- No unused function parameters warning (common in Laravel) -->
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow multiple classes in one file for migrations -->
+    <rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+        <exclude-pattern>*/database/migrations/*</exclude-pattern>
+    </rule>
+
+    <!-- Allow side effects in config files -->
+    <rule ref="PSR1.Files.SideEffects">
+        <exclude-pattern>*/config/*</exclude-pattern>
+        <exclude-pattern>*/routes/*</exclude-pattern>
+        <exclude-pattern>*/bootstrap/*</exclude-pattern>
+    </rule>
+
+    <!-- Class name doesn't need to match filename for migrations -->
+    <rule ref="Squiz.Classes.ClassFileName">
+        <exclude-pattern>*/database/migrations/*</exclude-pattern>
+        <exclude-pattern>*/database/seeders/*</exclude-pattern>
+    </rule>
+
+</ruleset>
