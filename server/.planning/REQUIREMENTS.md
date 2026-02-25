@@ -15,7 +15,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **DOM-04**: ExamResult VO validates percentage 0-100, throws FailedExamException if < 20%, exposes points() and isAdvancedLevel()
 - [ ] **DOM-05**: LanguageCertificate VO encapsulates certificate type and language, exposes points() and language()
 - [ ] **DOM-06**: Score VO stores basePoints and bonusPoints immutably, exposes total()
-- [ ] **DOM-07**: AdmissionException abstract base class with 6 typed subclasses (FailedExam, MissingGlobalMandatory, MissingProgramMandatory, ProgramMandatoryLevel, MissingElective, UnknownProgram)
+- [x] **DOM-07**: AdmissionException abstract base class with 6 typed subclasses (FailedExam, MissingGlobalMandatory, MissingProgramMandatory, ProgramMandatoryLevel, MissingElective, UnknownProgram)
 - [ ] **DOM-08**: ProgramRequirementsInterface contract with getMandatorySubject(), getElectiveSubjects(), getMandatorySubjectLevel()
 
 ### Database
@@ -107,7 +107,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DOM-04 | Phase 2 | Pending |
 | DOM-05 | Phase 2 | Pending |
 | DOM-06 | Phase 2 | Pending |
-| DOM-07 | Phase 1 | Pending |
+| DOM-07 | Phase 1 | Complete |
 | DOM-08 | Phase 5 | Pending |
 | DB-01 | Phase 3 | Pending |
 | DB-02 | Phase 3 | Pending |

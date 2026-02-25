@@ -12,7 +12,7 @@ Build a bottom-up TDD implementation of a read-only Laravel 12 REST API that cal
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Domain Primitives** - Enums and exception hierarchy — zero-dependency foundation for all subsequent layers
+- [x] **Phase 1: Domain Primitives** - Enums and exception hierarchy — zero-dependency foundation for all subsequent layers (completed 2026-02-25)
 - [ ] **Phase 2: Value Objects** - Immutable ExamResult, LanguageCertificate, Score VOs with full unit test coverage
 - [ ] **Phase 3: Database Schema and Models** - Five migrations, five Eloquent models with typed relationships, factories
 - [ ] **Phase 4: Seed Data** - Two programmes and four acceptance-test applicants seeded in correct FK order
@@ -128,7 +128,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Domain Primitives | 1/2 | In progress | - |
+| 1. Domain Primitives | 2/2 | Complete   | 2026-02-25 |
 | 2. Value Objects | 0/2 | Planned | - |
 | 3. Database Schema and Models | 0/? | Not started | - |
 | 4. Seed Data | 0/? | Not started | - |
