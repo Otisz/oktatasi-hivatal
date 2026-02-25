@@ -46,7 +46,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. LanguageCertificate::points() returns the correct value per type; language() returns the language string
   4. Score::total() equals basePoints + bonusPoints; basePoints() and bonusPoints() getters return stored values
   5. All three unit test files pass (ExamResultTest, LanguageCertificateTest, ScoreTest)
-**Plans**: TBD
+**Plans**: 2 plans
+  - [ ] 02-01-PLAN.md — TDD: ExamResult VO with two-stage validation + ExamResultTest
+  - [ ] 02-02-PLAN.md — TDD: LanguageCertificate and Score VOs + LanguageCertificateTest and ScoreTest
 
 ### Phase 3: Database Schema and Models
 **Goal**: The five-table database schema is migrated and Eloquent models with typed relationships are ready for seeding and querying
@@ -127,7 +129,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Domain Primitives | 0/2 | Planned | - |
-| 2. Value Objects | 0/? | Not started | - |
+| 2. Value Objects | 0/2 | Planned | - |
 | 3. Database Schema and Models | 0/? | Not started | - |
 | 4. Seed Data | 0/? | Not started | - |
 | 5. Strategy Pattern | 0/? | Not started | - |
