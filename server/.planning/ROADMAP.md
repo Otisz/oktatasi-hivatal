@@ -32,7 +32,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. AdmissionException abstract base class and all six typed subclasses compile and carry the correct Hungarian error messages
   3. LanguageCertificateType::B2->points() returns 28 and LanguageCertificateType::C1->points() returns 40
   4. Pint and PHPStan pass with no errors on all new files
-**Plans**: TBD
+**Plans**: 2 plans
+  - [ ] 01-01-PLAN.md — Create three backed string enums (SubjectName, ExamLevel, LanguageCertificateType)
+  - [ ] 01-02-PLAN.md — Create AdmissionException abstract base and six typed subclasses
 
 ### Phase 2: Value Objects
 **Goal**: Immutable Value Objects with embedded validation exist and are fully unit-tested
@@ -124,7 +126,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Domain Primitives | 0/? | Not started | - |
+| 1. Domain Primitives | 0/2 | Planned | - |
 | 2. Value Objects | 0/? | Not started | - |
 | 3. Database Schema and Models | 0/? | Not started | - |
 | 4. Seed Data | 0/? | Not started | - |
