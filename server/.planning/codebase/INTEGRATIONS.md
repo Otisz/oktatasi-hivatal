@@ -1,0 +1,208 @@
+# External Integrations
+
+**Analysis Date:** 2026-02-25
+
+## APIs & External Services
+
+**Email Services:**
+- SMTP - Standard email via SMTP protocol
+  - SDK/Client: Built into Laravel Mail
+  - Config: `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`
+  - Environment: `config/mail.php`
+
+- AWS SES (Simple Email Service) - Amazon email service
+  - SDK/Client: Built into Laravel Mail
+  - Config: `MAIL_MAILER=ses`
+  - Auth: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION`
+
+- Postmark - Transactional email provider
+  - SDK/Client: Built into Laravel Mail
+  - Config: `MAIL_MAILER=postmark`
+  - Auth: `POSTMARK_API_KEY`
+
+- Resend - Modern email API
+  - SDK/Client: Built into Laravel Mail
+  - Config: `MAIL_MAILER=resend`
+  - Auth: `RESEND_API_KEY`
+
+**Cloud Storage:**
+- AWS S3 - File storage
+  - SDK/Client: Built into Laravel Filesystems
+  - Config: Available as `s3` disk in `config/filesystems.php`
+  - Auth: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
+  - Bucket: `AWS_BUCKET`
+  - Region: `AWS_DEFAULT_REGION`
+  - Endpoint: `AWS_ENDPOINT` (for S3-compatible services)
+
+**Notification Services:**
+- Slack - Team messaging and notifications
+  - Config: Available in `config/services.php`
+  - Auth: `SLACK_BOT_USER_OAUTH_TOKEN`
+  - Channel: `SLACK_BOT_USER_DEFAULT_CHANNEL`
+
+## Data Storage
+
+**Databases:**
+- SQLite (default)
+  - Connection: `database.sqlite` file in `database/` directory
+  - Client: PDO with Laravel Query Builder/Eloquent ORM
+  - Config: `config/database.php` (sqlite connection)
+
+- MySQL 8.0+ / MariaDB 10.3+
+  - Connection: Configure via `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
+  - Client: MySQLi/PDO with Laravel Query Builder/Eloquent ORM
+  - Config: `config/database.php` (mysql/mariadb connections)
+  - SSL Support: `MYSQL_ATTR_SSL_CA` environment variable
+
+- PostgreSQL 12+
+  - Connection: Configure via `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
+  - Client: PDO_PGSQL with Laravel Query Builder/Eloquent ORM
+  - Config: `config/database.php` (pgsql connection)
+  - SSL Mode: `DB_SSLMODE` (default: prefer)
+
+- SQL Server 2019+
+  - Connection: Configure via `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
+  - Client: SQL Server extension with Laravel Query Builder/Eloquent ORM
+  - Config: `config/database.php` (sqlsrv connection)
+
+**File Storage:**
+- Local filesystem only (default)
+  - Private storage: `storage/app/private`
+  - Public storage: `storage/app/public` (served at `/storage`)
+  - AWS S3 available as optional `s3` disk
+
+**Caching:**
+- Database cache - Default caching backend
+  - Table: `cache` (or configured `DB_CACHE_TABLE`)
+  - Config: `config/cache.php`
+
+- Redis (optional) - High-performance caching
+  - Connection: `REDIS_HOST`, `REDIS_PORT`, `REDIS_PASSWORD`, `REDIS_DB`
+  - Client: PhpRedis (`REDIS_CLIENT=phpredis`)
+  - Config: `config/database.php` (redis section)
+  - Uses: Caching, sessions, queue processing
+
+- File-based cache - Filesystem caching
+  - Location: `storage/framework/cache/data`
+
+- Memcached (optional) - Distributed memory cache
+  - Connection: `MEMCACHED_HOST`, `MEMCACHED_PORT`
+  - Config: `config/cache.php`
+
+- DynamoDB (AWS) - NoSQL cache storage
+  - Auth: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
+  - Table: `DYNAMODB_CACHE_TABLE` (default: cache)
+  - Region: `AWS_DEFAULT_REGION`
+  - Endpoint: `DYNAMODB_ENDPOINT` (for local testing)
+
+## Authentication & Identity
+
+**Auth Provider:**
+- Custom Laravel authentication
+  - Implementation: Session-based web authentication
+  - Guard: `web` (session driver)
+  - Provider: Eloquent ORM with `App\Models\User` model
+  - Config: `config/auth.php`
+
+**Password Reset:**
+- Database-backed token storage
+  - Table: `password_reset_tokens`
+  - Token expiry: 60 minutes (configurable)
+  - Throttle: 60 seconds between requests
+
+## Monitoring & Observability
+
+**Error Tracking:**
+- None detected - Errors logged locally only
+
+**Logs:**
+- Stack-based logging approach (primary + fallback)
+  - Default: Single file at `storage/logs/laravel.log`
+  - Alternative channels: daily rotation, Slack webhook, Papertrail remote logging
+  - Log level: debug (development) to error (production)
+  - Config: `config/logging.php`
+
+**Performance Monitoring:**
+- Debugbar/Profiling: Not configured by default
+
+## CI/CD & Deployment
+
+**Hosting:**
+- Not pre-configured - Application-agnostic deployment
+
+**CI Pipeline:**
+- Not detected - No GitHub Actions, GitLab CI, etc. configured
+
+**Deployment Scripts:**
+- Composer scripts available:
+  - `composer setup` - Install dependencies, copy .env, generate key, run migrations
+  - `composer test` - Clear cache and run tests
+  - `composer lint` - Run Rector, PHPStan, and Pint
+
+## Environment Configuration
+
+**Required env vars:**
+- `APP_NAME` - Application name (default: Laravel)
+- `APP_KEY` - Encryption key (base64-encoded, generated by `php artisan key:generate`)
+- `APP_ENV` - Environment (local, staging, production)
+- `APP_DEBUG` - Debug mode (true/false)
+- `APP_URL` - Application URL for link generation
+
+**Database vars (if not using SQLite):**
+- `DB_CONNECTION` - Connection type (sqlite, mysql, pgsql, sqlsrv, mariadb)
+- `DB_HOST` - Database server hostname
+- `DB_PORT` - Database server port
+- `DB_DATABASE` - Database name
+- `DB_USERNAME` - Database username
+- `DB_PASSWORD` - Database password
+
+**Optional service vars:**
+- AWS: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION`, `AWS_BUCKET`
+- Mail: `MAIL_MAILER`, `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`
+- Redis: `REDIS_HOST`, `REDIS_PORT`, `REDIS_PASSWORD`
+- Slack: `SLACK_BOT_USER_OAUTH_TOKEN`
+- Postmark: `POSTMARK_API_KEY`
+- Resend: `RESEND_API_KEY`
+
+**Secrets location:**
+- `.env` file (not committed to version control)
+- Template: `.env.example` provides configuration keys
+
+## Queue System Configuration
+
+**Default Queue:**
+- Database-backed jobs
+  - Table: `jobs`
+  - Connection: Uses default database connection
+  - Config: `config/queue.php`
+
+**Alternative Queues:**
+- Redis - High-performance async processing
+  - Connection: Via Redis config
+  - Queue name: `REDIS_QUEUE` (default: default)
+
+- AWS SQS - Cloud-based queue service
+  - Auth: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
+  - Queue: `SQS_QUEUE`, `SQS_PREFIX` (AWS account ID required)
+  - Region: `AWS_DEFAULT_REGION`
+
+- Beanstalkd - High-performance work queue
+  - Connection: `BEANSTALKD_QUEUE_HOST`
+  - Queue: `BEANSTALKD_QUEUE` (default: default)
+
+**Failed Jobs:**
+- Database storage with UUID tracking
+  - Table: `failed_jobs`
+  - Driver: `database-uuids` (preserves original job data)
+
+## Webhooks & Callbacks
+
+**Incoming:**
+- Not detected - No webhook endpoints configured
+
+**Outgoing:**
+- Not detected - No outbound webhook integrations configured
+
+---
+
+*Integration audit: 2026-02-25*
