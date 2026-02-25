@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. LanguageCertificateType::B2->points() returns 28 and LanguageCertificateType::C1->points() returns 40
   4. Pint and PHPStan pass with no errors on all new files
 **Plans**: 2 plans
-  - [ ] 01-01-PLAN.md — Create three backed string enums (SubjectName, ExamLevel, LanguageCertificateType)
+  - [x] 01-01-PLAN.md — Create three backed string enums (SubjectName, ExamLevel, LanguageCertificateType)
   - [ ] 01-02-PLAN.md — Create AdmissionException abstract base and six typed subclasses
 
 ### Phase 2: Value Objects
@@ -128,7 +128,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Domain Primitives | 0/2 | Planned | - |
+| 1. Domain Primitives | 1/2 | In progress | - |
 | 2. Value Objects | 0/2 | Planned | - |
 | 3. Database Schema and Models | 0/? | Not started | - |
 | 4. Seed Data | 0/? | Not started | - |

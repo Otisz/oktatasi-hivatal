@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-25)
 ## Current Position
 
 Phase: 1 of 8 (Domain Primitives)
-Plan: 0 of ? in current phase
-Status: Ready to plan
-Last activity: 2026-02-25 — Roadmap created
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-02-25 — Completed 01-01 (Domain Enums)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█░░░░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: — min
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: 5 min
+- Total execution time: 0.08 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-domain-primitives | 1 | 5 min | 5 min |
 
 **Recent Trend:**
-- Last 5 plans: —
-- Trend: —
+- Last 5 plans: 5min
+- Trend: establishing baseline
 
 *Updated after each plan completion*
 
@@ -46,6 +46,9 @@ Recent decisions affecting current work:
 - Single DatabaseProgramRequirements strategy class — all programmes share the same DB-driven logic
 - Value Objects over raw arrays — type safety, immutability, encapsulated validation
 - Validation order matches exception hierarchy — first failing rule stops processing
+- English TitleCase case names with accented Hungarian backing values — SubjectName::EnglishLanguage = 'angol nyelv'
+- Enum helper methods co-locate business rules: globallyMandatory() on SubjectName, points() on LanguageCertificateType
+- LanguageCertificateType uses descriptive English names: UpperIntermediate (B2, 28pts), Advanced (C1, 40pts)
 
 ### Pending Todos
 
@@ -60,5 +63,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-domain-primitives/01-CONTEXT.md
+Stopped at: Completed 01-01-PLAN.md (Domain Primitives — Enum Vocabulary)
+Resume file: .planning/phases/01-domain-primitives/01-02-PLAN.md
