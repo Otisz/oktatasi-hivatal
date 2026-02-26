@@ -20,11 +20,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Database
 
-- [ ] **DB-01**: Programs table migration (id, university, faculty, name)
-- [ ] **DB-02**: ProgramSubjects table migration (id, program_id FK, subject_name, requirement_type, required_level nullable)
-- [ ] **DB-03**: Applicants table migration (id, program_id FK)
-- [ ] **DB-04**: ApplicantExamResults table migration (id, applicant_id FK, subject_name, level, percentage)
-- [ ] **DB-05**: ApplicantBonusPoints table migration (id, applicant_id FK, category, type, language nullable)
+- [x] **DB-01**: Programs table migration (id, university, faculty, name)
+- [x] **DB-02**: ProgramSubjects table migration (id, program_id FK, subject_name, requirement_type, required_level nullable)
+- [x] **DB-03**: Applicants table migration (id, program_id FK)
+- [x] **DB-04**: ApplicantExamResults table migration (id, applicant_id FK, subject_name, level, percentage)
+- [x] **DB-05**: ApplicantBonusPoints table migration (id, applicant_id FK, category, type, language nullable)
 - [ ] **DB-06**: Eloquent models for all 5 tables with typed relationships and eager loading support
 - [ ] **DB-07**: Factories for Applicant, ApplicantExamResult, ApplicantBonusPoint
 
@@ -109,11 +109,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DOM-06 | Phase 2 | Complete |
 | DOM-07 | Phase 1 | Complete |
 | DOM-08 | Phase 5 | Pending |
-| DB-01 | Phase 3 | Pending |
-| DB-02 | Phase 3 | Pending |
-| DB-03 | Phase 3 | Pending |
-| DB-04 | Phase 3 | Pending |
-| DB-05 | Phase 3 | Pending |
+| DB-01 | Phase 3 | Complete |
+| DB-02 | Phase 3 | Complete |
+| DB-03 | Phase 3 | Complete |
+| DB-04 | Phase 3 | Complete |
+| DB-05 | Phase 3 | Complete |
 | DB-06 | Phase 3 | Pending |
 | DB-07 | Phase 3 | Pending |
 | SEED-01 | Phase 4 | Pending |
