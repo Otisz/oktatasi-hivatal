@@ -8,7 +8,7 @@ progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 6
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -23,28 +23,29 @@ See: .planning/PROJECT.md (updated 2026-02-25)
 ## Current Position
 
 Phase: 2 of 8 (Value Objects)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-26 — Completed 02-01 (ExamResult Value Object)
+Last activity: 2026-02-26 — Completed 02-02 (LanguageCertificate and Score Value Objects)
 
-Progress: [██░░░░░░░░] 17%
+Progress: [███░░░░░░░] 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 3 min
-- Total execution time: 0.10 hours
+- Total plans completed: 4
+- Average duration: 2 min
+- Total execution time: 0.13 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-domain-primitives | 2 | 6 min | 3 min |
+| 02-value-objects | 2 | 2 min | 1 min |
 
 **Recent Trend:**
-- Last 5 plans: 5min, 1min
-- Trend: establishing baseline
+- Last 5 plans: 5min, 1min, 1min, 1min
+- Trend: fast and stable
 
 *Updated after each plan completion*
 
@@ -67,6 +68,8 @@ Recent decisions affecting current work:
 - Readonly promoted constructor properties carry context on all typed exception subclasses
 - [Phase 02-value-objects]: final readonly class for ExamResult VO — Pint final_class rule enforced; two-stage validation order locked by tests
 - [Phase 02-value-objects]: points() as thin accessor pattern — uniform interface for scoring engine to consume all VOs
+- [02-02]: LanguageCertificate requires no constructor validation — enum type safety + language accepts any string
+- [02-02]: Score dual accessor confirmed valid in PHP 8.2+ — public readonly property and same-named method coexist without PHPStan errors
 
 ### Pending Todos
 
@@ -81,5 +84,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 02-01-PLAN.md (Value Objects — ExamResult)
-Resume file: .planning/phases/02-value-objects/02-02-PLAN.md
+Stopped at: Completed 02-02-PLAN.md (Value Objects — LanguageCertificate and Score)
+Resume file: .planning/phases/02-value-objects/02-03-PLAN.md
