@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-25T21:59:50.835Z"
+last_updated: "2026-02-26T08:44:13.952Z"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 6
-  completed_plans: 2
+  completed_plans: 3
 ---
 
 # Project State
@@ -18,14 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-25)
 
 **Core value:** Correct, rule-compliant admission score calculation — the scoring engine must enforce all Hungarian admission rules in the right order and produce exact expected results for every test case.
-**Current focus:** Phase 1 — Domain Primitives
+**Current focus:** Phase 2 — Value Objects
 
 ## Current Position
 
-Phase: 1 of 8 (Domain Primitives)
-Plan: 2 of 3 in current phase
+Phase: 2 of 8 (Value Objects)
+Plan: 1 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-25 — Completed 01-02 (Exception Hierarchy)
+Last activity: 2026-02-26 — Completed 02-01 (ExamResult Value Object)
 
 Progress: [██░░░░░░░░] 17%
 
@@ -65,6 +65,8 @@ Recent decisions affecting current work:
 - Abstract AdmissionException with empty body — prevents direct instantiation, exempts from Pint final_class rule
 - No render()/report() on exceptions — pure domain objects, HTTP mapping deferred to API layer
 - Readonly promoted constructor properties carry context on all typed exception subclasses
+- [Phase 02-value-objects]: final readonly class for ExamResult VO — Pint final_class rule enforced; two-stage validation order locked by tests
+- [Phase 02-value-objects]: points() as thin accessor pattern — uniform interface for scoring engine to consume all VOs
 
 ### Pending Todos
 
@@ -78,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25
-Stopped at: Completed 01-02-PLAN.md (Domain Primitives — Exception Hierarchy)
-Resume file: .planning/phases/01-domain-primitives/01-03-PLAN.md
+Last session: 2026-02-26
+Stopped at: Completed 02-01-PLAN.md (Value Objects — ExamResult)
+Resume file: .planning/phases/02-value-objects/02-02-PLAN.md

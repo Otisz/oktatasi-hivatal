@@ -12,7 +12,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **DOM-01**: SubjectName enum defines all 13 matriculation subjects with Hungarian string values
 - [x] **DOM-02**: ExamLevel enum defines kozep and emelt levels
 - [x] **DOM-03**: LanguageCertificateType enum defines B2 (28 pts) and C1 (40 pts) with points() method
-- [ ] **DOM-04**: ExamResult VO validates percentage 0-100, throws FailedExamException if < 20%, exposes points() and isAdvancedLevel()
+- [x] **DOM-04**: ExamResult VO validates percentage 0-100, throws FailedExamException if < 20%, exposes points() and isAdvancedLevel()
 - [ ] **DOM-05**: LanguageCertificate VO encapsulates certificate type and language, exposes points() and language()
 - [ ] **DOM-06**: Score VO stores basePoints and bonusPoints immutably, exposes total()
 - [x] **DOM-07**: AdmissionException abstract base class with 6 typed subclasses (FailedExam, MissingGlobalMandatory, MissingProgramMandatory, ProgramMandatoryLevel, MissingElective, UnknownProgram)
@@ -64,7 +64,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Testing
 
-- [ ] **TEST-01**: Unit tests for ExamResult (constructor validation, points(), isAdvancedLevel(), FailedExamException)
+- [x] **TEST-01**: Unit tests for ExamResult (constructor validation, points(), isAdvancedLevel(), FailedExamException)
 - [ ] **TEST-02**: Unit tests for LanguageCertificate (points() B2/C1, language() getter)
 - [ ] **TEST-03**: Unit tests for Score (total() calculation, getters)
 - [ ] **TEST-04**: Unit tests for DatabaseProgramRequirements (mock Program model, mandatory/elective/level queries)
@@ -104,7 +104,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DOM-01 | Phase 1 | Pending |
 | DOM-02 | Phase 1 | Pending |
 | DOM-03 | Phase 1 | Pending |
-| DOM-04 | Phase 2 | Pending |
+| DOM-04 | Phase 2 | Complete |
 | DOM-05 | Phase 2 | Pending |
 | DOM-06 | Phase 2 | Pending |
 | DOM-07 | Phase 1 | Complete |
@@ -138,7 +138,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | API-03 | Phase 8 | Pending |
 | API-04 | Phase 8 | Pending |
 | API-05 | Phase 8 | Pending |
-| TEST-01 | Phase 2 | Pending |
+| TEST-01 | Phase 2 | Complete |
 | TEST-02 | Phase 2 | Pending |
 | TEST-03 | Phase 2 | Pending |
 | TEST-04 | Phase 5 | Pending |
