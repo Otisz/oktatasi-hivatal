@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-26T09:40:16.745Z"
+last_updated: "2026-02-26T09:35:00.000Z"
 progress:
   total_phases: 4
   completed_phases: 3
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 7
+  completed_plans: 7
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-25)
 
 **Core value:** Correct, rule-compliant admission score calculation — the scoring engine must enforce all Hungarian admission rules in the right order and produce exact expected results for every test case.
-**Current focus:** Phase 3 — Database Schema and Models
+**Current focus:** Phase 4 — Seed Data
 
 ## Current Position
 
-Phase: 3 of 8 (Database Schema and Models) — COMPLETE
-Plan: 2 of 2 in current phase — COMPLETE
-Status: Phase complete — ready for Phase 4
-Last activity: 2026-02-26 — Completed 03-02 (Eloquent Models and Factories)
+Phase: 4 of 8 (Seed Data) — COMPLETE
+Plan: 1 of 1 in current phase — COMPLETE
+Status: Phase complete — ready for Phase 5
+Last activity: 2026-02-26 — Completed 04-01 (ProgramSeeder and ApplicantSeeder)
 
-Progress: [████░░░░░░] 37%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 7
 - Average duration: 2 min
-- Total execution time: 0.17 hours
+- Total execution time: 0.22 hours
 
 **By Phase:**
 
@@ -43,9 +43,10 @@ Progress: [████░░░░░░] 37%
 | 01-domain-primitives | 2 | 6 min | 3 min |
 | 02-value-objects | 2 | 2 min | 1 min |
 | 03-database-schema-and-models | 2 | 4 min | 2 min |
+| 04-seed-data | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 5min, 1min, 1min, 1min, 2min
+- Last 5 plans: 1min, 1min, 1min, 2min, 3min
 - Trend: fast and stable
 
 *Updated after each plan completion*
@@ -77,6 +78,9 @@ Recent decisions affecting current work:
 - [03-02]: No $fillable/$guarded/$with on models — Model::unguard() active; all eager loading is explicit
 - [03-02]: Factory enum values stored as .value strings to avoid DB type errors; factory has() requires explicit relationship name when method name differs from Laravel's auto-guess
 - [03-02]: Default percentage in ApplicantExamResultFactory is 20-100 to avoid triggering FailedExamException; failingExam() state sets 0-19
+- [04-01]: UUID constants defined on ProgramSeeder (ELTE_IK_UUID, PPKE_BTK_UUID) for cross-referencing from ApplicantSeeder without string literals
+- [04-01]: Enum instances passed directly to Eloquent create() — model casts() handles DB serialization, no ->value needed
+- [04-01]: DatabaseSeeder has no WithoutModelEvents trait — models have no observers per Phase 3 locked decision
 
 ### Pending Todos
 
@@ -91,5 +95,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 03-02-PLAN.md (Eloquent Models and Factories)
-Resume file: .planning/phases/04-seeder/04-01-PLAN.md
+Stopped at: Completed 04-01-PLAN.md (ProgramSeeder and ApplicantSeeder)
+Resume file: .planning/phases/05-domain-services/05-01-PLAN.md

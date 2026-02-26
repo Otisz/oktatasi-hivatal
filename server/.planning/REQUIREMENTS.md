@@ -30,13 +30,13 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Seed Data
 
-- [ ] **SEED-01**: ProgramSeeder creates ELTE IK Programtervezo informatikus (mandatory: matematika, electives: biologia/fizika/informatika/kemia)
-- [ ] **SEED-02**: ProgramSeeder creates PPKE BTK Anglisztika (mandatory: angol nyelv emelt, electives: francia/nemet/olasz/orosz/spanyol/tortenelem)
-- [ ] **SEED-03**: ApplicantSeeder creates Applicant 1 (ELTE IK, expected score: 470)
-- [ ] **SEED-04**: ApplicantSeeder creates Applicant 2 (ELTE IK + fizika, expected score: 476)
-- [ ] **SEED-05**: ApplicantSeeder creates Applicant 3 (ELTE IK, missing magyar + tortenelem, expected: error)
-- [ ] **SEED-06**: ApplicantSeeder creates Applicant 4 (ELTE IK, magyar 15%, expected: error)
-- [ ] **SEED-07**: DatabaseSeeder calls ProgramSeeder then ApplicantSeeder in correct FK order
+- [x] **SEED-01**: ProgramSeeder creates ELTE IK Programtervezo informatikus (mandatory: matematika, electives: biologia/fizika/informatika/kemia)
+- [x] **SEED-02**: ProgramSeeder creates PPKE BTK Anglisztika (mandatory: angol nyelv emelt, electives: francia/nemet/olasz/orosz/spanyol/tortenelem)
+- [x] **SEED-03**: ApplicantSeeder creates Applicant 1 (ELTE IK, expected score: 470)
+- [x] **SEED-04**: ApplicantSeeder creates Applicant 2 (ELTE IK + fizika, expected score: 476)
+- [x] **SEED-05**: ApplicantSeeder creates Applicant 3 (ELTE IK, missing magyar + tortenelem, expected: error)
+- [x] **SEED-06**: ApplicantSeeder creates Applicant 4 (ELTE IK, magyar 15%, expected: error)
+- [x] **SEED-07**: DatabaseSeeder calls ProgramSeeder then ApplicantSeeder in correct FK order
 
 ### Business Logic
 
@@ -116,13 +116,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DB-05 | Phase 3 | Complete |
 | DB-06 | Phase 3 | Complete |
 | DB-07 | Phase 3 | Complete |
-| SEED-01 | Phase 4 | Pending |
-| SEED-02 | Phase 4 | Pending |
-| SEED-03 | Phase 4 | Pending |
-| SEED-04 | Phase 4 | Pending |
-| SEED-05 | Phase 4 | Pending |
-| SEED-06 | Phase 4 | Pending |
-| SEED-07 | Phase 4 | Pending |
+| SEED-01 | Phase 4 | Complete |
+| SEED-02 | Phase 4 | Complete |
+| SEED-03 | Phase 4 | Complete |
+| SEED-04 | Phase 4 | Complete |
+| SEED-05 | Phase 4 | Complete |
+| SEED-06 | Phase 4 | Complete |
+| SEED-07 | Phase 4 | Complete |
 | BIZ-01 | Phase 5 | Pending |
 | BIZ-02 | Phase 5 | Pending |
 | BIZ-03 | Phase 6 | Pending |
