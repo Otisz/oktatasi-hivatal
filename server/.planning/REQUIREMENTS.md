@@ -16,7 +16,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **DOM-05**: LanguageCertificate VO encapsulates certificate type and language, exposes points() and language()
 - [x] **DOM-06**: Score VO stores basePoints and bonusPoints immutably, exposes total()
 - [x] **DOM-07**: AdmissionException abstract base class with 6 typed subclasses (FailedExam, MissingGlobalMandatory, MissingProgramMandatory, ProgramMandatoryLevel, MissingElective, UnknownProgram)
-- [ ] **DOM-08**: ProgramRequirementsInterface contract with getMandatorySubject(), getElectiveSubjects(), getMandatorySubjectLevel()
+- [x] **DOM-08**: ProgramRequirementsInterface contract with getMandatorySubject(), getElectiveSubjects(), getMandatorySubjectLevel()
 
 ### Database
 
@@ -40,8 +40,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Business Logic
 
-- [ ] **BIZ-01**: DatabaseProgramRequirements implements ProgramRequirementsInterface using Program model's eager-loaded subjects
-- [ ] **BIZ-02**: ProgramRegistry resolves ProgramRequirementsInterface for an Applicant via eager-loaded program.subjects
+- [x] **BIZ-01**: DatabaseProgramRequirements implements ProgramRequirementsInterface using Program model's eager-loaded subjects
+- [x] **BIZ-02**: ProgramRegistry resolves ProgramRequirementsInterface for an Applicant via eager-loaded program.subjects
 - [ ] **BIZ-03**: BasePointCalculator computes (mandatory + best_elective) x 2, max 400
 - [ ] **BIZ-04**: BonusPointCalculator accumulates emelt exam (+50 each) and language cert points with same-language dedup, caps at 100
 - [ ] **BIZ-05**: AdmissionScoringService maps Eloquent rows to VOs first (triggering step-1 validation), then runs ordered validation chain (steps 2-5), then delegates to calculators, returns Score VO
@@ -67,8 +67,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **TEST-01**: Unit tests for ExamResult (constructor validation, points(), isAdvancedLevel(), FailedExamException)
 - [x] **TEST-02**: Unit tests for LanguageCertificate (points() B2/C1, language() getter)
 - [x] **TEST-03**: Unit tests for Score (total() calculation, getters)
-- [ ] **TEST-04**: Unit tests for DatabaseProgramRequirements (mock Program model, mandatory/elective/level queries)
-- [ ] **TEST-05**: Unit tests for ProgramRegistry (mock Applicant/Program, correct resolution)
+- [x] **TEST-04**: Unit tests for DatabaseProgramRequirements (mock Program model, mandatory/elective/level queries)
+- [x] **TEST-05**: Unit tests for ProgramRegistry (mock Applicant/Program, correct resolution)
 - [ ] **TEST-06**: Unit tests for BasePointCalculator (formula, boundary cases)
 - [ ] **TEST-07**: Unit tests for BonusPointCalculator (emelt points, language certs, dedup, cap at 100)
 - [ ] **TEST-08**: Unit tests for AdmissionScoringService (all exception paths, correct orchestration with mocks)
@@ -108,7 +108,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DOM-05 | Phase 2 | Complete |
 | DOM-06 | Phase 2 | Complete |
 | DOM-07 | Phase 1 | Complete |
-| DOM-08 | Phase 5 | Pending |
+| DOM-08 | Phase 5 | Complete |
 | DB-01 | Phase 3 | Complete |
 | DB-02 | Phase 3 | Complete |
 | DB-03 | Phase 3 | Complete |
@@ -123,8 +123,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEED-05 | Phase 4 | Complete |
 | SEED-06 | Phase 4 | Complete |
 | SEED-07 | Phase 4 | Complete |
-| BIZ-01 | Phase 5 | Pending |
-| BIZ-02 | Phase 5 | Pending |
+| BIZ-01 | Phase 5 | Complete |
+| BIZ-02 | Phase 5 | Complete |
 | BIZ-03 | Phase 6 | Pending |
 | BIZ-04 | Phase 6 | Pending |
 | BIZ-05 | Phase 7 | Pending |
@@ -141,8 +141,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TEST-01 | Phase 2 | Complete |
 | TEST-02 | Phase 2 | Complete |
 | TEST-03 | Phase 2 | Complete |
-| TEST-04 | Phase 5 | Pending |
-| TEST-05 | Phase 5 | Pending |
+| TEST-04 | Phase 5 | Complete |
+| TEST-05 | Phase 5 | Complete |
 | TEST-06 | Phase 6 | Pending |
 | TEST-07 | Phase 6 | Pending |
 | TEST-08 | Phase 7 | Pending |

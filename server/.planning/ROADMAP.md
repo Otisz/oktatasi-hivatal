@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Value Objects** - Immutable ExamResult, LanguageCertificate, Score VOs with full unit test coverage (completed 2026-02-26)
 - [x] **Phase 3: Database Schema and Models** - Five migrations, five Eloquent models with typed relationships, factories (completed 2026-02-26)
 - [x] **Phase 4: Seed Data** - Two programmes and four acceptance-test applicants seeded in correct FK order (completed 2026-02-26)
-- [ ] **Phase 5: Strategy Pattern** - ProgramRequirementsInterface, DatabaseProgramRequirements, ProgramRegistry with unit tests
+- [x] **Phase 5: Strategy Pattern** - ProgramRequirementsInterface, DatabaseProgramRequirements, ProgramRegistry with unit tests (completed 2026-02-26)
 - [ ] **Phase 6: Calculators** - BasePointCalculator and BonusPointCalculator with unit tests for all formula and edge cases
 - [ ] **Phase 7: Scoring Service** - AdmissionScoringService orchestrating VO mapping, validation chain, and calculators
 - [ ] **Phase 8: API Layer** - Controller, resource, routes, exception renderer, service provider wiring, acceptance tests
@@ -133,7 +133,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 2. Value Objects | 2/2 | Complete   | 2026-02-26 |
 | 3. Database Schema and Models | 2/2 | Complete   | 2026-02-26 |
 | 4. Seed Data | 1/1 | Complete   | 2026-02-26 |
-| 5. Strategy Pattern | 0/? | Not started | - |
+| 5. Strategy Pattern | 1/1 | Complete   | 2026-02-26 |
 | 6. Calculators | 0/? | Not started | - |
 | 7. Scoring Service | 0/? | Not started | - |
 | 8. API Layer | 0/? | Not started | - |
