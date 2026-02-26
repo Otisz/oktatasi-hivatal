@@ -70,7 +70,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. ELTE IK programme exists with matematika as mandatory and biologia/fizika/informatika/kemia as electives
   3. PPKE BTK Anglisztika programme exists with angol nyelv at emelt level as mandatory
   4. Four applicants exist with IDs 1-4 carrying the exact exam results and bonus points from the homework specification
-**Plans**: TBD
+**Plans**: 1 plan
+  - [ ] 04-01-PLAN.md — Create ProgramSeeder, ApplicantSeeder, and update DatabaseSeeder with exact homework data
 
 ### Phase 5: Strategy Pattern
 **Goal**: ProgramRequirementsInterface, DatabaseProgramRequirements, and ProgramRegistry exist and are unit-tested against mock models
@@ -131,7 +132,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 1. Domain Primitives | 2/2 | Complete   | 2026-02-25 |
 | 2. Value Objects | 2/2 | Complete   | 2026-02-26 |
 | 3. Database Schema and Models | 2/2 | Complete   | 2026-02-26 |
-| 4. Seed Data | 0/? | Not started | - |
+| 4. Seed Data | 0/1 | Not started | - |
 | 5. Strategy Pattern | 0/? | Not started | - |
 | 6. Calculators | 0/? | Not started | - |
 | 7. Scoring Service | 0/? | Not started | - |
