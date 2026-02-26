@@ -10,17 +10,9 @@ final readonly class Score
         public int $basePoints,
         public int $bonusPoints,
     ) {
-        if ($basePoints < 0) {
-            throw new \InvalidArgumentException(
-                "Base points must be non-negative, got {$basePoints}.",
-            );
-        }
+        throw_if($basePoints < 0, \InvalidArgumentException::class, "Base points must be non-negative, got {$basePoints}.");
 
-        if ($bonusPoints < 0) {
-            throw new \InvalidArgumentException(
-                "Bonus points must be non-negative, got {$bonusPoints}.",
-            );
-        }
+        throw_if($bonusPoints < 0, \InvalidArgumentException::class, "Bonus points must be non-negative, got {$bonusPoints}.");
     }
 
     public function total(): int

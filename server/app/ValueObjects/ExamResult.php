@@ -15,15 +15,9 @@ final readonly class ExamResult
         public ExamLevel $level,
         public int $percentage,
     ) {
-        if ($percentage < 0 || $percentage > 100) {
-            throw new \InvalidArgumentException(
-                "Percentage must be between 0 and 100, got {$percentage}.",
-            );
-        }
+        throw_if($percentage < 0 || $percentage > 100, \InvalidArgumentException::class, "Percentage must be between 0 and 100, got {$percentage}.");
 
-        if ($percentage < 20) {
-            throw new FailedExamException($subject, $percentage);
-        }
+        throw_if($percentage < 20, FailedExamException::class, $subject, $percentage);
     }
 
     public function points(): int

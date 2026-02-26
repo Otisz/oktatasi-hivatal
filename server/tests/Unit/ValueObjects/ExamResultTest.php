@@ -7,27 +7,27 @@ use App\Enums\SubjectName;
 use App\Exceptions\FailedExamException;
 use App\ValueObjects\ExamResult;
 
-it('accepts valid percentages', function (int $percentage) {
+it('accepts valid percentages', function (int $percentage): void {
     $result = new ExamResult(SubjectName::Mathematics, ExamLevel::Intermediate, $percentage);
     expect($result->percentage)->toBe($percentage);
 })->with([20, 50, 99, 100]);
 
-it('throws InvalidArgumentException for out-of-range percentage', function (int $percentage) {
+it('throws InvalidArgumentException for out-of-range percentage', function (int $percentage): void {
     expect(fn () => new ExamResult(SubjectName::Mathematics, ExamLevel::Intermediate, $percentage))
-        ->toThrow(\InvalidArgumentException::class);
+        ->toThrow(InvalidArgumentException::class);
 })->with([-1, 101]);
 
-it('throws FailedExamException for percentage below 20', function (int $percentage) {
+it('throws FailedExamException for percentage below 20', function (int $percentage): void {
     expect(fn () => new ExamResult(SubjectName::Mathematics, ExamLevel::Intermediate, $percentage))
         ->toThrow(FailedExamException::class);
 })->with([0, 1, 19]);
 
-it('returns percentage as points', function (int $percentage) {
+it('returns percentage as points', function (int $percentage): void {
     $result = new ExamResult(SubjectName::Mathematics, ExamLevel::Intermediate, $percentage);
     expect($result->points())->toBe($percentage);
 })->with([20, 75, 100]);
 
-it('detects advanced level correctly', function (ExamLevel $level, bool $expected) {
+it('detects advanced level correctly', function (ExamLevel $level, bool $expected): void {
     $result = new ExamResult(SubjectName::Mathematics, $level, 50);
     expect($result->isAdvancedLevel())->toBe($expected);
 })->with([
@@ -35,7 +35,7 @@ it('detects advanced level correctly', function (ExamLevel $level, bool $expecte
     'advanced' => [ExamLevel::Advanced, true],
 ]);
 
-it('exposes subject, level, and percentage as public properties', function () {
+it('exposes subject, level, and percentage as public properties', function (): void {
     $result = new ExamResult(SubjectName::Mathematics, ExamLevel::Advanced, 85);
     expect($result->subject)->toBe(SubjectName::Mathematics)
         ->and($result->level)->toBe(ExamLevel::Advanced)
