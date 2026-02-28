@@ -18,7 +18,7 @@ final class ProgramSeeder extends Seeder
 
     public function run(): void
     {
-        $elteIk = Program::create([
+        $elteIk = Program::query()->create([
             'id' => self::ELTE_IK_UUID,
             'university' => 'ELTE',
             'faculty' => 'IK',
@@ -55,7 +55,7 @@ final class ProgramSeeder extends Seeder
             'required_level' => null,
         ]);
 
-        $ppkeBtk = Program::create([
+        $ppkeBtk = Program::query()->create([
             'id' => self::PPKE_BTK_UUID,
             'university' => 'PPKE',
             'faculty' => 'BTK',

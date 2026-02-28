@@ -13,7 +13,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 final class Applicant extends Model
 {
     /** @use HasFactory<\Database\Factories\ApplicantFactory> */
-    use HasFactory, HasUuids;
+    use HasFactory;
+
+    use HasUuids;
 
     public const string CASE_1_UUID = '0195a1b2-0000-7000-8000-000000000001';
 

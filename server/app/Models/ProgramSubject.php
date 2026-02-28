@@ -12,10 +12,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property-read SubjectName $subject_name
+ * @property-read RequirementType $requirement_type
+ * @property-read ExamLevel $required_level
+ */
 final class ProgramSubject extends Model
 {
     /** @use HasFactory<\Database\Factories\ProgramSubjectFactory> */
-    use HasFactory, HasUuids;
+    use HasFactory;
+
+    use HasUuids;
 
     /** @return array<string, class-string> */
     protected function casts(): array

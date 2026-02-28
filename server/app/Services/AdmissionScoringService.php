@@ -20,13 +20,15 @@ use App\ValueObjects\ExamResult;
 use App\ValueObjects\LanguageCertificate;
 use App\ValueObjects\Score;
 
-final class AdmissionScoringService
+final readonly class AdmissionScoringService
 {
     public function __construct(
         private ProgramRegistryInterface $programRegistry,
         private BasePointCalculatorInterface $basePointCalculator,
         private BonusPointCalculatorInterface $bonusPointCalculator,
-    ) {}
+    ) {
+        //
+    }
 
     public function calculateForApplicant(Applicant $applicant): Score
     {
@@ -83,9 +85,7 @@ final class AdmissionScoringService
         );
 
         foreach (SubjectName::globallyMandatory() as $required) {
-            if (!in_array($required, $subjectNames, true)) {
-                throw new MissingGlobalMandatorySubjectException;
-            }
+            throw_unless(in_array($required, $subjectNames, true), MissingGlobalMandatorySubjectException::class);
         }
     }
 
@@ -138,9 +138,7 @@ final class AdmissionScoringService
             }
         }
 
-        if (null === $best) {
-            throw new MissingElectiveSubjectException;
-        }
+        throw_if(null === $best, MissingElectiveSubjectException::class);
 
         return $best;
     }

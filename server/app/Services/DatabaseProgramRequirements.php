@@ -14,7 +14,10 @@ use App\Models\ProgramSubject;
 
 final readonly class DatabaseProgramRequirements implements ProgramRequirementsInterface
 {
-    public function __construct(private Program $program) {}
+    public function __construct(private Program $program)
+    {
+        //
+    }
 
     public function getMandatorySubject(): SubjectName
     {

@@ -12,7 +12,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 final class Program extends Model
 {
     /** @use HasFactory<\Database\Factories\ProgramFactory> */
-    use HasFactory, HasUuids;
+    use HasFactory;
+
+    use HasUuids;
 
     /** @return HasMany<ProgramSubject, $this> */
     public function subjects(): HasMany
