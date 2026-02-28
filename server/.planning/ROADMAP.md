@@ -95,7 +95,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. BonusPointCalculator deduplicates language certificates per language (not per type), taking the higher-scoring certificate
   4. BonusPointCalculator caps total bonus points at 100
   5. All calculator unit tests pass
-**Plans**: TBD
+**Plans**: 1 plan
+  - [ ] 06-01-PLAN.md — TDD BasePointCalculator and BonusPointCalculator with full unit test coverage
 
 ### Phase 7: Scoring Service
 **Goal**: AdmissionScoringService orchestrates VO mapping, the five-step ordered validation chain, and score calculation — fully unit-tested with mocks
@@ -134,6 +135,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 3. Database Schema and Models | 2/2 | Complete   | 2026-02-26 |
 | 4. Seed Data | 1/1 | Complete   | 2026-02-26 |
 | 5. Strategy Pattern | 1/1 | Complete   | 2026-02-26 |
-| 6. Calculators | 0/? | Not started | - |
+| 6. Calculators | 0/1 | Not started | - |
 | 7. Scoring Service | 0/? | Not started | - |
 | 8. API Layer | 0/? | Not started | - |
