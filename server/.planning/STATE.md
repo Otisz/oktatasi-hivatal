@@ -1,9 +1,9 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.0
-milestone_name: milestone
-status: unknown
-last_updated: "2026-02-28T15:45:10.831Z"
+milestone_name: MVP
+status: shipped
+last_updated: "2026-02-28T17:10:00.000Z"
 progress:
   total_phases: 8
   completed_phases: 8
@@ -15,101 +15,35 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-25)
+See: .planning/PROJECT.md (updated 2026-02-28)
 
 **Core value:** Correct, rule-compliant admission score calculation — the scoring engine must enforce all Hungarian admission rules in the right order and produce exact expected results for every test case.
-**Current focus:** Phase 8 — API Layer (COMPLETE)
+**Current focus:** v1.0 MVP shipped — no next milestone planned (complete homework exercise)
 
 ## Current Position
 
-Phase: 8 of 8 (API Layer) — Plan 1 COMPLETE
-Plan: 1 of 1 in current phase — COMPLETE
-Status: Phase 8 plan 1 complete — all phases complete
-Last activity: 2026-02-28 — Completed 08-01 (API Layer)
+Milestone: v1.0 MVP — SHIPPED 2026-02-28
+Phases: 8/8 complete | Plans: 13/13 complete
+Requirements: 45/45 satisfied | Audit: PASSED
 
-Progress: [██████████] 100%
-
-## Performance Metrics
-
-**Velocity:**
-- Total plans completed: 9
-- Average duration: 2 min
-- Total execution time: 0.39 hours
-
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 01-domain-primitives | 2 | 6 min | 3 min |
-| 02-value-objects | 2 | 2 min | 1 min |
-| 03-database-schema-and-models | 2 | 4 min | 2 min |
-| 04-seed-data | 1 | 3 min | 3 min |
-| 05-strategy-pattern | 1 | 1 min | 1 min |
-| 06-calculators | 1 | 1 min | 1 min |
-| 07-scoring-service | 1 | 9 min | 9 min |
-| 08-api-layer | 1 | 1 min | 1 min |
-
-**Recent Trend:**
-- Last 5 plans: 9min, 1min, 1min, 1min, 2min
-- Trend: fast and stable
-
-*Updated after each plan completion*
-| Phase 07-scoring-service P02 | 3 | 1 tasks | 2 files |
-| Phase 08-api-layer P02 | 1min | 1 tasks | 1 files |
+Progress: [██████████] 100% — SHIPPED
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- DB-backed programme requirements (not hardcoded) — supports arbitrary programmes without code changes
-- Single DatabaseProgramRequirements strategy class — all programmes share the same DB-driven logic
-- Value Objects over raw arrays — type safety, immutability, encapsulated validation
-- Validation order matches exception hierarchy — first failing rule stops processing
-- English TitleCase case names with accented Hungarian backing values — SubjectName::EnglishLanguage = 'angol nyelv'
-- Enum helper methods co-locate business rules: globallyMandatory() on SubjectName, points() on LanguageCertificateType
-- LanguageCertificateType uses descriptive English names: UpperIntermediate (B2, 28pts), Advanced (C1, 40pts)
-- Abstract AdmissionException with empty body — prevents direct instantiation, exempts from Pint final_class rule
-- No render()/report() on exceptions — pure domain objects, HTTP mapping deferred to API layer
-- Readonly promoted constructor properties carry context on all typed exception subclasses
-- [Phase 02-value-objects]: final readonly class for ExamResult VO — Pint final_class rule enforced; two-stage validation order locked by tests
-- [Phase 02-value-objects]: points() as thin accessor pattern — uniform interface for scoring engine to consume all VOs
-- [02-02]: LanguageCertificate requires no constructor validation — enum type safety + language accepts any string
-- [02-02]: Score dual accessor confirmed valid in PHP 8.2+ — public readonly property and same-named method coexist without PHPStan errors
-- [Phase 03-database-schema-and-models]: Migration timestamps assigned sequentially to guarantee FK dependency order — artisan same-second collision fixed
-- [Phase 03-database-schema-and-models]: All domain tables use UUID primary keys via uuid('id')->primary() — not auto-increment bigInt
-- [Phase 03-database-schema-and-models]: Cascade delete on all FK constraints — child rows removed when parent deleted
-- [03-02]: No $fillable/$guarded/$with on models — Model::unguard() active; all eager loading is explicit
-- [03-02]: Factory enum values stored as .value strings to avoid DB type errors; factory has() requires explicit relationship name when method name differs from Laravel's auto-guess
-- [03-02]: Default percentage in ApplicantExamResultFactory is 20-100 to avoid triggering FailedExamException; failingExam() state sets 0-19
-- [04-01]: UUID constants defined on ProgramSeeder (ELTE_IK_UUID, PPKE_BTK_UUID) for cross-referencing from ApplicantSeeder without string literals
-- [04-01]: Enum instances passed directly to Eloquent create() — model casts() handles DB serialization, no ->value needed
-- [04-01]: DatabaseSeeder has no WithoutModelEvents trait — models have no observers per Phase 3 locked decision
-- [05-01]: Closure-based enum filtering over Collection::firstWhere/where — avoids loose equality edge cases with enum instances set via setAttribute
-- [05-01]: getMandatorySubjectLevel() duplicates closure lookup instead of calling getMandatorySubject() — avoids triggering UnknownProgramException when only level is needed
-- [06-01]: BasePointCalculator/BonusPointCalculator are final class (not readonly) — no constructor properties; no-arg constructors prohibited by project rules
-- [06-01]: BonusPointCalculator dedup uses array<string, int> map keyed by language() string — correct dedup key per spec (not cert type)
-- [07-01]: Extracted ProgramRegistryInterface, BasePointCalculatorInterface, BonusPointCalculatorInterface — final concrete classes cannot be mocked by Mockery; interfaces enable full test isolation
-- [07-01]: AdmissionScoringService injects interfaces not concrete classes — follows existing ProgramRequirementsInterface pattern in app/Contracts/
-- [Phase 07-scoring-service]: Interface bindings use FQCNs inline in AppServiceProvider::register() — no use imports, singleton over bind for stateless services
-- [08-01]: ScoreResource accesses Score VO methods via $this->resource->method() — JsonResource proxies property access but not method calls on non-Model resources
-- [08-01]: Pint fully_qualified_strict_types fixer rewrites closure type hints — unqualified names used in bootstrap/app.php exception rendering closure
-- [Phase 08-api-layer]: uses(RefreshDatabase::class) declared per-file — Pest.php has it commented out globally; each test file that needs DB isolation must opt in explicitly
+All decisions archived in PROJECT.md Key Decisions table and `.planning/milestones/v1.0-ROADMAP.md`.
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
-- Research flag: PHP readonly class semantics and PHPStan level 7 array shape annotations for Phase 2 VOs
-- Research flag: Mockery constructor mocking syntax with Pest 4 / PHPUnit 12 for Phase 7
-- `AngoNyelv` enum key typo in IMPLEMENTATION.md — use `AngolNyelv` (correct spelling) during Phase 1
+None — milestone complete.
 
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed 08-01-PLAN.md (API Layer)
-Resume file: .planning/phases/08-api-layer/
+Status: v1.0 milestone archived
+Next action: `/gsd:new-milestone` if future work needed
