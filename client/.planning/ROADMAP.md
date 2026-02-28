@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Project scaffolded with Vue 3 + Vite + TypeScript + Tailwind CSS v4 + Biome + typed API contracts (completed 2026-02-28)
 - [ ] **Phase 2: Routing and Data Layer** - Vue Router + TanStack Query + Axios configured with typed queries and 422 discrimination
-- [ ] **Phase 3: Applicant List View** - Full list view with loading, empty state, click navigation, and responsive layout
+- [x] **Phase 3: Applicant List View** - Full list view with loading, empty state, click navigation, and responsive layout (completed 2026-02-28)
 - [ ] **Phase 4: Score Detail View** - Score breakdown and styled Hungarian error display completing the end-to-end flow
 
 ## Phase Details
@@ -79,5 +79,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-02-28 |
 | 2. Routing and Data Layer | 1/2 | In Progress|  |
-| 3. Applicant List View | TBD | Not started | - |
+| 3. Applicant List View | 1/1 | Complete   | 2026-02-28 |
 | 4. Score Detail View | TBD | Not started | - |

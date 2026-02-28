@@ -30,10 +30,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Applicant List
 
-- [ ] **LIST-01**: User can view all applicants with programme info (university, faculty, name)
-- [ ] **LIST-02**: User can click an applicant row to navigate to their score view
-- [ ] **LIST-03**: Loading skeleton displayed while applicants are being fetched
-- [ ] **LIST-04**: Empty state displayed when no applicants exist
+- [x] **LIST-01**: User can view all applicants with programme info (university, faculty, name)
+- [x] **LIST-02**: User can click an applicant row to navigate to their score view
+- [x] **LIST-03**: Loading skeleton displayed while applicants are being fetched
+- [x] **LIST-04**: Empty state displayed when no applicants exist
 
 ### Score Display
 
@@ -44,8 +44,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Layout
 
-- [ ] **LAYOUT-01**: Responsive Tailwind CSS layout (single-column mobile, comfortable desktop)
-- [ ] **LAYOUT-02**: Consistent page structure with header and content areas
+- [x] **LAYOUT-01**: Responsive Tailwind CSS layout (single-column mobile, comfortable desktop)
+- [x] **LAYOUT-02**: Consistent page structure with header and content areas
 
 ## v2 Requirements
 
@@ -96,16 +96,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NAV-01 | Phase 2 | Complete |
 | NAV-02 | Phase 4 | Complete |
 | NAV-03 | Phase 2 | Complete |
-| LIST-01 | Phase 3 | Pending |
-| LIST-02 | Phase 3 | Pending |
-| LIST-03 | Phase 3 | Pending |
-| LIST-04 | Phase 3 | Pending |
+| LIST-01 | Phase 3 | Complete |
+| LIST-02 | Phase 3 | Complete |
+| LIST-03 | Phase 3 | Complete |
+| LIST-04 | Phase 3 | Complete |
 | SCORE-01 | Phase 4 | Pending |
 | SCORE-02 | Phase 4 | Pending |
 | SCORE-03 | Phase 4 | Pending |
 | SCORE-04 | Phase 4 | Pending |
-| LAYOUT-01 | Phase 3 | Pending |
-| LAYOUT-02 | Phase 3 | Pending |
+| LAYOUT-01 | Phase 3 | Complete |
+| LAYOUT-02 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 22 total

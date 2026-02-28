@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-28T18:09:23.391Z"
+last_updated: "2026-02-28T18:30:38.173Z"
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_phases: 3
+  completed_phases: 3
+  total_plans: 5
+  completed_plans: 5
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-28)
 
 **Core value:** A clean, responsive UI that lets users quickly view any applicant's admission score breakdown.
-**Current focus:** v1.0 MVP — Phase 2: Routing and Data Layer (Plans 02-01 and 02-02 complete)
+**Current focus:** v1.0 MVP — Phase 3: Applicant List View (Plan 03-01 complete)
 
 ## Current Position
 
-Phase: 2 of 4 (Routing and Data Layer)
-Plan: 2 of 2 (02-01 complete, 02-02 complete)
+Phase: 3 of 4 (Applicant List View)
+Plan: 1 of 1 (03-01 complete)
 Status: Executing
-Last activity: 2026-02-28 — Plan 02-02 complete: useApplicants and useApplicantScore composables with 422 discrimination
+Last activity: 2026-02-28 — Plan 03-01 complete: ApplicantsView.vue with loading skeleton, empty state, error state, and click-to-navigate cards
 
-Progress: [████░░░░░░] ~36%
+Progress: [██████░░░░] ~60%
 
 ## Performance Metrics
 
@@ -45,6 +45,7 @@ Progress: [████░░░░░░] ~36%
 *Updated after each plan completion*
 | Phase 02-routing-and-data-layer P02 | 2 | 2 tasks | 2 files |
 | Phase 02-routing-and-data-layer P01 | 2 | 2 tasks | 8 files |
+| Phase 03-applicant-list-view P01 | 15 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,8 @@ Recent decisions affecting current work:
 - [Phase 02-routing-and-data-layer]: axios imported only for isAxiosError static type guard in useApplicantScore — one allowed exception to no-direct-axios rule
 - [Phase 02-routing-and-data-layer]: MaybeRefOrGetter<string> + computed queryKey for reactive id in useApplicantScore
 - [Phase 02-routing-and-data-layer]: Vue Router uses createWebHistory (history mode) for clean URLs; catch-all redirects silently to /applicants (no 404 page); progress bar is a Tailwind-only implementation with isNavigating ref; staleTime updated to 30 min for static seeded data
+- [Phase 03-applicant-list-view]: isLoading (not isPending) for skeleton guard — prevents unwanted flash on cached back-navigation (isPending stays true with cached data in TanStack Query v5)
+- [Phase 03-applicant-list-view]: Inline SVG icons for empty/error states — avoids icon library dependency for two low-frequency icons
 
 ### Pending Todos
 
@@ -79,6 +82,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed 02-02-PLAN.md — TanStack Query data composables: useApplicants and useApplicantScore with 422 discrimination
+Stopped at: Completed 03-01-PLAN.md — Applicant list view with loading skeleton, empty state, error state, and click-to-navigate cards
 Resume file: None
-Next action: Phase 2 complete — move to Phase 3: List View (useApplicants consumer) or Phase 4: Score Detail View
+Next action: Phase 3 complete — move to Phase 4: Score Detail View (ApplicantDetailView.vue consumer of useApplicantScore)
