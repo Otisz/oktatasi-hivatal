@@ -11,8 +11,8 @@ import { isNavigating } from '@/composables/useProgress'
     />
     <header class="bg-white border-b border-gray-200">
       <div class="max-w-4xl mx-auto px-4 py-4">
-        <h1 class="text-xl font-bold text-gray-900">Oktatasi Hivatal</h1>
-        <p class="text-sm text-gray-500">Felveteli pontszamolo</p>
+        <h1 class="text-xl font-bold text-gray-900">Oktatási Hivatal</h1>
+        <p class="text-sm text-gray-500">Felvételi pontszámoló</p>
       </div>
     </header>
     <main><RouterView /></main>
