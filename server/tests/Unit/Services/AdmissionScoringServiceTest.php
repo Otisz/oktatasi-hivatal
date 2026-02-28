@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\Contracts\BasePointCalculatorInterface;
+use App\Contracts\BonusPointCalculatorInterface;
+use App\Contracts\ProgramRegistryInterface;
 use App\Contracts\ProgramRequirementsInterface;
 use App\Enums\ExamLevel;
 use App\Enums\LanguageCertificateType;
@@ -15,11 +18,7 @@ use App\Models\Applicant;
 use App\Models\ApplicantBonusPoint;
 use App\Models\ApplicantExamResult;
 use App\Services\AdmissionScoringService;
-use App\Services\BasePointCalculator;
-use App\Services\BonusPointCalculator;
-use App\Services\ProgramRegistry;
 use Illuminate\Database\Eloquent\Collection;
-use Mockery;
 
 function makeExamResultRow(SubjectName $subject, ExamLevel $level, int $percentage): ApplicantExamResult
 {
@@ -50,11 +49,11 @@ function makeApplicantWithExams(array $examRows, array $bonusRows = []): Applica
 }
 
 it('throws FailedExamException when an exam has percentage below 20', function (): void {
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldNotReceive('findByApplicant');
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 
@@ -67,11 +66,11 @@ it('throws FailedExamException when an exam has percentage below 20', function (
 });
 
 it('throws MissingGlobalMandatorySubjectException when magyar is absent', function (): void {
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldNotReceive('findByApplicant');
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 
@@ -86,11 +85,11 @@ it('throws MissingGlobalMandatorySubjectException when magyar is absent', functi
 });
 
 it('throws MissingGlobalMandatorySubjectException when tortenelem is absent', function (): void {
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldNotReceive('findByApplicant');
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 
@@ -105,11 +104,11 @@ it('throws MissingGlobalMandatorySubjectException when tortenelem is absent', fu
 });
 
 it('throws MissingGlobalMandatorySubjectException when matematika is absent', function (): void {
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldNotReceive('findByApplicant');
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 
@@ -127,11 +126,11 @@ it('throws MissingProgramMandatorySubjectException when programme mandatory subj
     $requirements = Mockery::mock(ProgramRequirementsInterface::class);
     $requirements->shouldReceive('getMandatorySubject')->once()->andReturn(SubjectName::EnglishLanguage);
 
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldReceive('findByApplicant')->once()->andReturn($requirements);
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 
@@ -150,11 +149,11 @@ it('throws ProgramMandatorySubjectLevelException when mandatory subject is at wr
     $requirements->shouldReceive('getMandatorySubject')->once()->andReturn(SubjectName::EnglishLanguage);
     $requirements->shouldReceive('getMandatorySubjectLevel')->once()->andReturn(ExamLevel::Advanced);
 
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldReceive('findByApplicant')->once()->andReturn($requirements);
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 
@@ -175,11 +174,11 @@ it('throws MissingElectiveSubjectException when no elective subject matches', fu
     $requirements->shouldReceive('getMandatorySubjectLevel')->once()->andReturn(ExamLevel::Advanced);
     $requirements->shouldReceive('getElectiveSubjects')->once()->andReturn([SubjectName::FrenchLanguage, SubjectName::GermanLanguage]);
 
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldReceive('findByApplicant')->once()->andReturn($requirements);
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 
@@ -205,13 +204,13 @@ it('returns Score VO with correct basePoints and bonusPoints on happy path', fun
         SubjectName::Chemistry,
     ]);
 
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldReceive('findByApplicant')->once()->andReturn($requirements);
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
     $baseCalc->shouldReceive('calculate')->once()->andReturn(370);
 
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
     $bonusCalc->shouldReceive('calculate')->once()->andReturn(100);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
@@ -236,11 +235,11 @@ it('returns Score VO with correct basePoints and bonusPoints on happy path', fun
 });
 
 it('throws FailedExamException before MissingGlobalMandatorySubjectException — step 1 fires first', function (): void {
-    $registry = Mockery::mock(ProgramRegistry::class);
+    $registry = Mockery::mock(ProgramRegistryInterface::class);
     $registry->shouldNotReceive('findByApplicant');
 
-    $baseCalc = Mockery::mock(BasePointCalculator::class);
-    $bonusCalc = Mockery::mock(BonusPointCalculator::class);
+    $baseCalc = Mockery::mock(BasePointCalculatorInterface::class);
+    $bonusCalc = Mockery::mock(BonusPointCalculatorInterface::class);
 
     $service = new AdmissionScoringService($registry, $baseCalc, $bonusCalc);
 

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Contracts\BonusPointCalculatorInterface;
 use App\ValueObjects\ExamResult;
 use App\ValueObjects\LanguageCertificate;
 
-final class BonusPointCalculator
+final class BonusPointCalculator implements BonusPointCalculatorInterface
 {
     /**
      * @param  array<int, ExamResult>  $examResults
@@ -15,28 +16,26 @@ final class BonusPointCalculator
      */
     public function calculate(array $examResults, array $certificates): int
     {
-        $emeltPoints = 0;
+        $advancedPoints = 0;
 
         foreach ($examResults as $result) {
             if ($result->isAdvancedLevel()) {
-                $emeltPoints += 50;
+                $advancedPoints += 50;
             }
         }
 
         /** @var array<string, int> $langMap */
-        $langMap = [];
-
-        foreach ($certificates as $certificate) {
+        $langMap = array_reduce($certificates, function ($carry, $certificate): array {
             $language = $certificate->language();
             $points = $certificate->points();
 
-            $langMap[$language] = isset($langMap[$language])
-                ? max($langMap[$language], $points)
-                : $points;
-        }
+            $carry[$language] = isset($carry[$language]) ? max($carry[$language], $points) : $points;
+
+            return $carry;
+        }, []);
 
         $certPoints = array_sum($langMap);
 
-        return min($emeltPoints + $certPoints, 100);
+        return min($advancedPoints + $certPoints, 100);
     }
 }

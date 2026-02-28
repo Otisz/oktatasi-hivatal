@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Contracts\BasePointCalculatorInterface;
 use App\ValueObjects\ExamResult;
 
-final class BasePointCalculator
+final class BasePointCalculator implements BasePointCalculatorInterface
 {
     public function calculate(ExamResult $mandatory, ExamResult $bestElective): int
     {
