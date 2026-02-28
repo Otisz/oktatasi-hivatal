@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: active
-last_updated: "2026-02-28T15:39:00Z"
+status: unknown
+last_updated: "2026-02-28T15:42:49.152Z"
 progress:
   total_phases: 8
   completed_phases: 8
-  total_plans: 12
-  completed_plans: 12
+  total_plans: 13
+  completed_plans: 13
 ---
 
 # Project State
@@ -55,6 +55,7 @@ Progress: [██████████] 100%
 
 *Updated after each plan completion*
 | Phase 07-scoring-service P02 | 3 | 1 tasks | 2 files |
+| Phase 08-api-layer P02 | 1min | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,7 @@ Recent decisions affecting current work:
 - [Phase 07-scoring-service]: Interface bindings use FQCNs inline in AppServiceProvider::register() — no use imports, singleton over bind for stateless services
 - [08-01]: ScoreResource accesses Score VO methods via $this->resource->method() — JsonResource proxies property access but not method calls on non-Model resources
 - [08-01]: Pint fully_qualified_strict_types fixer rewrites closure type hints — unqualified names used in bootstrap/app.php exception rendering closure
+- [Phase 08-api-layer]: uses(RefreshDatabase::class) declared per-file — Pest.php has it commented out globally; each test file that needs DB isolation must opt in explicitly
 
 ### Pending Todos
 

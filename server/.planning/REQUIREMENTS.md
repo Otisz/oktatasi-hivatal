@@ -72,11 +72,11 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **TEST-06**: Unit tests for BasePointCalculator (formula, boundary cases)
 - [x] **TEST-07**: Unit tests for BonusPointCalculator (emelt points, language certs, dedup, cap at 100)
 - [x] **TEST-08**: Unit tests for AdmissionScoringService (all exception paths, correct orchestration with mocks)
-- [ ] **TEST-09**: Feature test Case 1 — Applicant 1 scores 470 (370 base + 100 bonus)
-- [ ] **TEST-10**: Feature test Case 2 — Applicant 2 scores 476 (376 base + 100 bonus)
-- [ ] **TEST-11**: Feature test Case 3 — Applicant 3 returns 422 (missing global mandatory subjects)
-- [ ] **TEST-12**: Feature test Case 4 — Applicant 4 returns 422 (magyar 15% < 20%)
-- [ ] **TEST-13**: Feature test — Unknown applicant returns 404
+- [x] **TEST-09**: Feature test Case 1 — Applicant 1 scores 470 (370 base + 100 bonus)
+- [x] **TEST-10**: Feature test Case 2 — Applicant 2 scores 476 (376 base + 100 bonus)
+- [x] **TEST-11**: Feature test Case 3 — Applicant 3 returns 422 (missing global mandatory subjects)
+- [x] **TEST-12**: Feature test Case 4 — Applicant 4 returns 422 (magyar 15% < 20%)
+- [x] **TEST-13**: Feature test — Unknown applicant returns 404
 
 ## v2 Requirements
 
@@ -146,11 +146,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TEST-06 | Phase 6 | Complete |
 | TEST-07 | Phase 6 | Complete |
 | TEST-08 | Phase 7 | Complete |
-| TEST-09 | Phase 8 | Pending |
-| TEST-10 | Phase 8 | Pending |
-| TEST-11 | Phase 8 | Pending |
-| TEST-12 | Phase 8 | Pending |
-| TEST-13 | Phase 8 | Pending |
+| TEST-09 | Phase 8 | Complete |
+| TEST-10 | Phase 8 | Complete |
+| TEST-11 | Phase 8 | Complete |
+| TEST-12 | Phase 8 | Complete |
+| TEST-13 | Phase 8 | Complete |
 
 **Coverage:**
 - v1 requirements: 45 total
