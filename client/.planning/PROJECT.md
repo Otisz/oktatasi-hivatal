@@ -31,6 +31,8 @@ A clean, responsive UI that lets users quickly view any applicant's admission sc
 - [ ] Error state display for 422 responses
 - [ ] Responsive Tailwind CSS layout
 - [ ] TypeScript types matching API response shapes
+- [ ] TanStack Query for data fetching with Axios HTTP client
+- [ ] Biome for linting and formatting
 
 ### Out of Scope
 
@@ -38,8 +40,9 @@ A clean, responsive UI that lets users quickly view any applicant's admission sc
 - CRUD operations — API is read-only, data is seeded
 - Internationalisation — UI follows API's Hungarian-language domain errors
 - Server-side rendering — SPA is sufficient for this use case
-- State management library (Pinia) — app state is minimal (current view + API response)
+- State management library (Pinia) — TanStack Query handles server state, app state is minimal
 - Unit/E2E testing — deferred to v1.1
+- ESLint/Prettier — replaced by Biome
 
 ## Context
 
@@ -93,11 +96,12 @@ A clean, responsive UI that lets users quickly view any applicant's admission sc
 
 ## Constraints
 
-- **Tech stack**: Vue 3, Vite, TypeScript, Tailwind CSS
+- **Tech stack**: Vue 3, Vite 7, TypeScript, Tailwind CSS v4
 - **API style**: Composition API with `<script setup>` syntax
 - **Structure**: Fully standalone project in `<git-root>/client/` with own `package.json`
-- **Routing**: Vue Router for applicant list and score views
-- **HTTP client**: Fetch API or Axios for API calls
+- **Routing**: Vue Router 5 for applicant list and score views
+- **HTTP client**: Axios wrapped by TanStack Query (Vue) for data fetching/caching
+- **Linting/formatting**: Biome (replaces ESLint/Prettier)
 - **No backend**: Pure SPA, all data comes from the sibling server API
 
 ## Key Decisions
@@ -107,6 +111,9 @@ A clean, responsive UI that lets users quickly view any applicant's admission sc
 | Standalone project (not Laravel Vite integration) | Client and server are independently deployable | — Pending |
 | Tailwind CSS over component library | Lightweight, full control over design | — Pending |
 | Hungarian error messages displayed as-is | Matches API domain language, no translation layer needed | — Pending |
+| TanStack Query over hand-rolled composables | Built-in caching, loading/error states, retry logic | — Pending |
+| Axios over native Fetch | Auto-throws on 4xx/5xx, cleaner 422 handling | — Pending |
+| Biome over ESLint/Prettier | Single tool for linting + formatting, faster | — Pending |
 
 ---
 *Last updated: 2026-02-28 after milestone v1.0 started*
