@@ -37,10 +37,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Score Display
 
-- [ ] **SCORE-01**: User can view score breakdown (total, base points, bonus points)
-- [ ] **SCORE-02**: Total score (`osszpontszam`) displayed prominently above breakdown
-- [ ] **SCORE-03**: Styled error card displaying verbatim Hungarian error message on 422
-- [ ] **SCORE-04**: Loading state displayed while score is being fetched
+- [x] **SCORE-01**: User can view score breakdown (total, base points, bonus points)
+- [x] **SCORE-02**: Total score (`osszpontszam`) displayed prominently above breakdown
+- [x] **SCORE-03**: Styled error card displaying verbatim Hungarian error message on 422
+- [x] **SCORE-04**: Loading state displayed while score is being fetched
 
 ### Layout
 
@@ -100,10 +100,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LIST-02 | Phase 3 | Complete |
 | LIST-03 | Phase 3 | Complete |
 | LIST-04 | Phase 3 | Complete |
-| SCORE-01 | Phase 4 | Pending |
-| SCORE-02 | Phase 4 | Pending |
-| SCORE-03 | Phase 4 | Pending |
-| SCORE-04 | Phase 4 | Pending |
+| SCORE-01 | Phase 4 | Complete |
+| SCORE-02 | Phase 4 | Complete |
+| SCORE-03 | Phase 4 | Complete |
+| SCORE-04 | Phase 4 | Complete |
 | LAYOUT-01 | Phase 3 | Complete |
 | LAYOUT-02 | Phase 3 | Complete |
 
