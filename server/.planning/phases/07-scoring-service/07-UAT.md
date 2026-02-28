@@ -1,5 +1,5 @@
 ---
-status: complete
+status: diagnosed
 phase: 07-scoring-service
 source: 07-01-SUMMARY.md
 started: 2026-02-28T12:00:00Z
@@ -57,7 +57,18 @@ skipped: 0
   reason: "User reported: Illuminate\\Contracts\\Container\\BindingResolutionException  Target [App\\Contracts\\ProgramRegistryInterface] is not instantiable while building [Laravel\\Tinker\\Console\\TinkerCommand, App\\Services\\AdmissionScoringService]."
   severity: major
   test: 2
-  root_cause: ""
-  artifacts: []
-  missing: []
-  debug_session: ""
+  root_cause: "Phase 07 created 3 interfaces and refactored AdmissionScoringService to depend on them via constructor injection, but never registered interface-to-concrete bindings in any service provider. AppServiceProvider::register() has zero bind/singleton calls."
+  artifacts:
+    - path: "app/Providers/AppServiceProvider.php"
+      issue: "Missing interface-to-concrete bindings in register()"
+    - path: "app/Contracts/ProgramRegistryInterface.php"
+      issue: "Unbound interface"
+    - path: "app/Contracts/BasePointCalculatorInterface.php"
+      issue: "Unbound interface"
+    - path: "app/Contracts/BonusPointCalculatorInterface.php"
+      issue: "Unbound interface"
+  missing:
+    - "Add singleton binding: ProgramRegistryInterface -> ProgramRegistry"
+    - "Add singleton binding: BasePointCalculatorInterface -> BasePointCalculator"
+    - "Add singleton binding: BonusPointCalculatorInterface -> BonusPointCalculator"
+  debug_session: ".planning/debug/binding-resolution-exception.md"
