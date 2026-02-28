@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. TanStack Query (`VueQueryPlugin`) is registered in `main.ts` and the Axios instance reads `VITE_API_BASE_URL` as its base URL
 **Plans**: 2 plans
   - [x] 01-01-PLAN.md — Scaffold Vue 3 + Vite + TypeScript + Tailwind CSS v4 + Biome
-  - [ ] 01-02-PLAN.md — TypeScript API interfaces + Axios + TanStack Query + environment config
+  - [x] 01-02-PLAN.md — TypeScript API interfaces + Axios + TanStack Query + environment config
 
 ### Phase 2: Routing and Data Layer
 **Goal**: Vue Router routes are reachable in the browser and TanStack Query delivers typed applicant and score data (including 422 errors) before any view renders them
@@ -42,7 +42,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Navigating directly to `/applicants/some-uuid` renders the correct route component (even if the view is a placeholder)
   3. The applicants query returns a typed `Applicant[]` array from the real API when called in a browser devtools snippet or mounted component
   4. The score query for a valid applicant ID returns a typed `ScoreResult`; for an applicant with a 422 response, the error is captured as a typed `ApiError` and not treated as a network failure
-**Plans**: TBD
+**Plans**: 2 plans
+  - [ ] 02-01-PLAN.md — Vue Router + App shell + placeholder views + progress bar
+  - [ ] 02-02-PLAN.md — TanStack Query composables (useApplicants + useApplicantScore with 422 discrimination)
 
 ### Phase 3: Applicant List View
 **Goal**: Users can see all applicants, get feedback during loading, and navigate to a score detail view by clicking any row
@@ -75,6 +77,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-02-28 |
-| 2. Routing and Data Layer | TBD | Not started | - |
+| 2. Routing and Data Layer | 0/2 | Planned | - |
 | 3. Applicant List View | TBD | Not started | - |
 | 4. Score Detail View | TBD | Not started | - |
