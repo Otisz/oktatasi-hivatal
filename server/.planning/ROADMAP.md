@@ -123,7 +123,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. GET /api/v1/applicants/3/score returns 422 with Hungarian error message for missing global mandatory subjects
   5. GET /api/v1/applicants/4/score returns 422 with Hungarian error message for magyar 15% below 20%
   6. GET /api/v1/applicants/999/score returns 404
-**Plans**: TBD
+**Plans**: 2 plans
+  - [ ] 08-01-PLAN.md — Create API routes, controller, resources, and exception rendering in bootstrap/app.php
+  - [ ] 08-02-PLAN.md — Feature tests for all 5 acceptance cases (scores, errors, 404)
 
 ## Progress
 
@@ -139,4 +141,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 5. Strategy Pattern | 1/1 | Complete   | 2026-02-26 |
 | 6. Calculators | 1/1 | Complete   | 2026-02-28 |
 | 7. Scoring Service | 2/2 | Complete   | 2026-02-28 |
-| 8. API Layer | 0/? | Not started | - |
+| 8. API Layer | 0/2 | Not started | - |
