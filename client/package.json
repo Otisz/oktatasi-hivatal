@@ -11,6 +11,8 @@
     "lint:fix": "biome check --fix ."
   },
   "dependencies": {
+    "@tanstack/vue-query": "^5.92.9",
+    "axios": "^1.13.6",
     "vue": "^3.5.29"
   },
   "devDependencies": {
