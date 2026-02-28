@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-28T18:34:31.346Z"
+last_updated: "2026-02-28T18:52:30.331Z"
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 5
-  completed_plans: 5
+  total_phases: 4
+  completed_phases: 4
+  total_plans: 6
+  completed_plans: 6
 ---
 
 # Project State
@@ -46,6 +46,7 @@ Progress: [██████░░░░] ~60%
 | Phase 02-routing-and-data-layer P02 | 2 | 2 tasks | 2 files |
 | Phase 02-routing-and-data-layer P01 | 2 | 2 tasks | 8 files |
 | Phase 03-applicant-list-view P01 | 15 | 2 tasks | 1 files |
+| Phase 04-score-detail-view P01 | 7 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -69,6 +70,8 @@ Recent decisions affecting current work:
 - [Phase 02-routing-and-data-layer]: Vue Router uses createWebHistory (history mode) for clean URLs; catch-all redirects silently to /applicants (no 404 page); progress bar is a Tailwind-only implementation with isNavigating ref; staleTime updated to 30 min for static seeded data
 - [Phase 03-applicant-list-view]: isLoading (not isPending) for skeleton guard — prevents unwanted flash on cached back-navigation (isPending stays true with cached data in TanStack Query v5)
 - [Phase 03-applicant-list-view]: Inline SVG icons for empty/error states — avoids icon library dependency for two low-frequency icons
+- [Phase 04-score-detail-view]: Programme context sourced synchronously from ['applicants'] TanStack Query cache via useQueryClient().getQueryData() — no extra network call needed
+- [Phase 04-score-detail-view]: Domain error (422) branch MUST precede generic error branch in v-else-if chain — reversed order prevents amber card rendering
 
 ### Pending Todos
 

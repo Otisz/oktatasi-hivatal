@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Project scaffolded with Vue 3 + Vite + TypeScript + Tailwind CSS v4 + Biome + typed API contracts (completed 2026-02-28)
 - [ ] **Phase 2: Routing and Data Layer** - Vue Router + TanStack Query + Axios configured with typed queries and 422 discrimination
 - [x] **Phase 3: Applicant List View** - Full list view with loading, empty state, click navigation, and responsive layout (completed 2026-02-28)
-- [ ] **Phase 4: Score Detail View** - Score breakdown and styled Hungarian error display completing the end-to-end flow
+- [x] **Phase 4: Score Detail View** - Score breakdown and styled Hungarian error display completing the end-to-end flow (completed 2026-02-28)
 
 ## Phase Details
 
@@ -68,7 +68,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. A loading indicator is visible while the score is being fetched before the breakdown or error appears
   3. When the API returns a 422, the verbatim Hungarian error message is displayed in a styled error card (not a generic "something went wrong" message)
   4. A back navigation link on the detail view returns the user to `/applicants`
-**Plans**: TBD
+**Plans**: 1 plan
+  - [ ] 04-01-PLAN.md -- Score detail view with hero score, breakdown cards, domain error card, generic error with retry, loading skeleton, and back navigation
 
 ## Progress
 
@@ -80,4 +81,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 2/2 | Complete   | 2026-02-28 |
 | 2. Routing and Data Layer | 1/2 | In Progress|  |
 | 3. Applicant List View | 1/1 | Complete   | 2026-02-28 |
-| 4. Score Detail View | TBD | Not started | - |
+| 4. Score Detail View | 1/1 | Complete   | 2026-02-28 |
