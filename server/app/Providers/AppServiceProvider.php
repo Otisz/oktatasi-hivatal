@@ -17,6 +17,19 @@ final class AppServiceProvider extends ServiceProvider
         Model::unguard();
         Model::preventLazyLoading();
         Model::preventAccessingMissingAttributes();
+
+        $this->app->singleton(
+            \App\Contracts\ProgramRegistryInterface::class,
+            \App\Services\ProgramRegistry::class,
+        );
+        $this->app->singleton(
+            \App\Contracts\BasePointCalculatorInterface::class,
+            \App\Services\BasePointCalculator::class,
+        );
+        $this->app->singleton(
+            \App\Contracts\BonusPointCalculatorInterface::class,
+            \App\Services\BonusPointCalculator::class,
+        );
     }
 
     /**
