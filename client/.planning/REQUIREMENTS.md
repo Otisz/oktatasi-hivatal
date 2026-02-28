@@ -9,8 +9,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: Project scaffolded with Vue 3 + Vite + TypeScript + Tailwind CSS v4
-- [ ] **INFRA-02**: Biome configured for linting and formatting (replaces ESLint/Prettier)
+- [x] **INFRA-01**: Project scaffolded with Vue 3 + Vite + TypeScript + Tailwind CSS v4
+- [x] **INFRA-02**: Biome configured for linting and formatting (replaces ESLint/Prettier)
 - [ ] **INFRA-03**: API base URL configurable via `VITE_API_BASE_URL` environment variable
 - [ ] **INFRA-04**: TypeScript interfaces defined for all API response shapes (`Applicant`, `Program`, `ScoreResult`, `ApiError`)
 - [ ] **INFRA-05**: Axios HTTP client instance configured with base URL from environment
@@ -84,8 +84,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete (01-01) |
+| INFRA-02 | Phase 1 | Complete (01-01) |
 | INFRA-03 | Phase 1 | Pending |
 | INFRA-04 | Phase 1 | Pending |
 | INFRA-05 | Phase 1 | Pending |
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-28*
-*Last updated: 2026-02-28 after roadmap creation — all 22 requirements mapped*
+*Last updated: 2026-02-28 after plan 01-01 execution — INFRA-01, INFRA-02 complete*

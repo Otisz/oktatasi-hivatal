@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. All four TypeScript interfaces (`Applicant`, `Program`, `ScoreResult`, `ApiError`) exist in `src/types/api.ts` and the project compiles with no type errors
   5. TanStack Query (`VueQueryPlugin`) is registered in `main.ts` and the Axios instance reads `VITE_API_BASE_URL` as its base URL
 **Plans**: 2 plans
-  - [ ] 01-01-PLAN.md — Scaffold Vue 3 + Vite + TypeScript + Tailwind CSS v4 + Biome
+  - [x] 01-01-PLAN.md — Scaffold Vue 3 + Vite + TypeScript + Tailwind CSS v4 + Biome
   - [ ] 01-02-PLAN.md — TypeScript API interfaces + Axios + TanStack Query + environment config
 
 ### Phase 2: Routing and Data Layer
@@ -74,7 +74,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/2 | Planned | - |
+| 1. Foundation | 1/2 | Executing | - |
 | 2. Routing and Data Layer | TBD | Not started | - |
 | 3. Applicant List View | TBD | Not started | - |
 | 4. Score Detail View | TBD | Not started | - |
