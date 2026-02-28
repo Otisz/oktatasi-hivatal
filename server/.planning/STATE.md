@@ -5,10 +5,10 @@ milestone_name: milestone
 status: unknown
 last_updated: "2026-02-28T14:15:19.043Z"
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 9
-  completed_plans: 9
+  total_phases: 8
+  completed_phases: 7
+  total_plans: 10
+  completed_plans: 10
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-25)
 
 **Core value:** Correct, rule-compliant admission score calculation — the scoring engine must enforce all Hungarian admission rules in the right order and produce exact expected results for every test case.
-**Current focus:** Phase 6 — Calculators
+**Current focus:** Phase 7 — Scoring Service
 
 ## Current Position
 
-Phase: 6 of 8 (Calculators) — Plan 1 COMPLETE
+Phase: 7 of 8 (Scoring Service) — Plan 1 COMPLETE
 Plan: 1 of 1 in current phase — COMPLETE
-Status: Phase 6 plan 1 complete — ready for next phase
-Last activity: 2026-02-28 — Completed 06-01 (BasePointCalculator, BonusPointCalculator)
+Status: Phase 7 plan 1 complete — ready for next phase
+Last activity: 2026-02-28 — Completed 07-01 (AdmissionScoringService)
 
-Progress: [██████░░░░] 67%
+Progress: [███████░░░] 87%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 2 min
-- Total execution time: 0.24 hours
+- Total execution time: 0.39 hours
 
 **By Phase:**
 
@@ -46,9 +46,10 @@ Progress: [██████░░░░] 67%
 | 04-seed-data | 1 | 3 min | 3 min |
 | 05-strategy-pattern | 1 | 1 min | 1 min |
 | 06-calculators | 1 | 1 min | 1 min |
+| 07-scoring-service | 1 | 9 min | 9 min |
 
 **Recent Trend:**
-- Last 5 plans: 1min, 1min, 1min, 2min, 3min
+- Last 5 plans: 9min, 1min, 1min, 1min, 2min
 - Trend: fast and stable
 
 *Updated after each plan completion*
@@ -87,6 +88,8 @@ Recent decisions affecting current work:
 - [05-01]: getMandatorySubjectLevel() duplicates closure lookup instead of calling getMandatorySubject() — avoids triggering UnknownProgramException when only level is needed
 - [06-01]: BasePointCalculator/BonusPointCalculator are final class (not readonly) — no constructor properties; no-arg constructors prohibited by project rules
 - [06-01]: BonusPointCalculator dedup uses array<string, int> map keyed by language() string — correct dedup key per spec (not cert type)
+- [07-01]: Extracted ProgramRegistryInterface, BasePointCalculatorInterface, BonusPointCalculatorInterface — final concrete classes cannot be mocked by Mockery; interfaces enable full test isolation
+- [07-01]: AdmissionScoringService injects interfaces not concrete classes — follows existing ProgramRequirementsInterface pattern in app/Contracts/
 
 ### Pending Todos
 
@@ -101,5 +104,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed 06-01-PLAN.md (BasePointCalculator, BonusPointCalculator)
-Resume file: .planning/phases/06-calculators/
+Stopped at: Completed 07-01-PLAN.md (AdmissionScoringService)
+Resume file: .planning/phases/07-scoring-service/

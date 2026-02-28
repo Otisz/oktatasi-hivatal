@@ -44,15 +44,15 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **BIZ-02**: ProgramRegistry resolves ProgramRequirementsInterface for an Applicant via eager-loaded program.subjects
 - [x] **BIZ-03**: BasePointCalculator computes (mandatory + best_elective) x 2, max 400
 - [x] **BIZ-04**: BonusPointCalculator accumulates emelt exam (+50 each) and language cert points with same-language dedup, caps at 100
-- [ ] **BIZ-05**: AdmissionScoringService maps Eloquent rows to VOs first (triggering step-1 validation), then runs ordered validation chain (steps 2-5), then delegates to calculators, returns Score VO
+- [x] **BIZ-05**: AdmissionScoringService maps Eloquent rows to VOs first (triggering step-1 validation), then runs ordered validation chain (steps 2-5), then delegates to calculators, returns Score VO
 
 ### Validation
 
-- [ ] **VAL-01**: Step 1 — Any exam < 20% throws FailedExamException (enforced by ExamResult constructor during VO mapping)
-- [ ] **VAL-02**: Step 2 — Missing magyar/tortenelem/matematika throws MissingGlobalMandatorySubjectException
-- [ ] **VAL-03**: Step 3 — Missing programme mandatory subject throws MissingProgramMandatorySubjectException
-- [ ] **VAL-04**: Step 4 — Programme mandatory subject at wrong level throws ProgramMandatorySubjectLevelException
-- [ ] **VAL-05**: Step 5 — No matching elective subject throws MissingElectiveSubjectException
+- [x] **VAL-01**: Step 1 — Any exam < 20% throws FailedExamException (enforced by ExamResult constructor during VO mapping)
+- [x] **VAL-02**: Step 2 — Missing magyar/tortenelem/matematika throws MissingGlobalMandatorySubjectException
+- [x] **VAL-03**: Step 3 — Missing programme mandatory subject throws MissingProgramMandatorySubjectException
+- [x] **VAL-04**: Step 4 — Programme mandatory subject at wrong level throws ProgramMandatorySubjectLevelException
+- [x] **VAL-05**: Step 5 — No matching elective subject throws MissingElectiveSubjectException
 
 ### API
 
@@ -71,7 +71,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **TEST-05**: Unit tests for ProgramRegistry (mock Applicant/Program, correct resolution)
 - [x] **TEST-06**: Unit tests for BasePointCalculator (formula, boundary cases)
 - [x] **TEST-07**: Unit tests for BonusPointCalculator (emelt points, language certs, dedup, cap at 100)
-- [ ] **TEST-08**: Unit tests for AdmissionScoringService (all exception paths, correct orchestration with mocks)
+- [x] **TEST-08**: Unit tests for AdmissionScoringService (all exception paths, correct orchestration with mocks)
 - [ ] **TEST-09**: Feature test Case 1 — Applicant 1 scores 470 (370 base + 100 bonus)
 - [ ] **TEST-10**: Feature test Case 2 — Applicant 2 scores 476 (376 base + 100 bonus)
 - [ ] **TEST-11**: Feature test Case 3 — Applicant 3 returns 422 (missing global mandatory subjects)
@@ -127,12 +127,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BIZ-02 | Phase 5 | Complete |
 | BIZ-03 | Phase 6 | Complete |
 | BIZ-04 | Phase 6 | Complete |
-| BIZ-05 | Phase 7 | Pending |
-| VAL-01 | Phase 7 | Pending |
-| VAL-02 | Phase 7 | Pending |
-| VAL-03 | Phase 7 | Pending |
-| VAL-04 | Phase 7 | Pending |
-| VAL-05 | Phase 7 | Pending |
+| BIZ-05 | Phase 7 | Complete |
+| VAL-01 | Phase 7 | Complete |
+| VAL-02 | Phase 7 | Complete |
+| VAL-03 | Phase 7 | Complete |
+| VAL-04 | Phase 7 | Complete |
+| VAL-05 | Phase 7 | Complete |
 | API-01 | Phase 8 | Pending |
 | API-02 | Phase 8 | Pending |
 | API-03 | Phase 8 | Pending |
@@ -145,7 +145,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TEST-05 | Phase 5 | Complete |
 | TEST-06 | Phase 6 | Complete |
 | TEST-07 | Phase 6 | Complete |
-| TEST-08 | Phase 7 | Pending |
+| TEST-08 | Phase 7 | Complete |
 | TEST-09 | Phase 8 | Pending |
 | TEST-10 | Phase 8 | Pending |
 | TEST-11 | Phase 8 | Pending |
