@@ -24,9 +24,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Navigation
 
-- [ ] **NAV-01**: Vue Router with history mode and two named routes (`/applicants`, `/applicants/:id`)
-- [ ] **NAV-02**: Back navigation from score detail view to applicant list
-- [ ] **NAV-03**: Default route (`/`) redirects to `/applicants`
+- [x] **NAV-01**: Vue Router with history mode and two named routes (`/applicants`, `/applicants/:id`)
+- [x] **NAV-02**: Back navigation from score detail view to applicant list
+- [x] **NAV-03**: Default route (`/`) redirects to `/applicants`
 
 ### Applicant List
 
@@ -93,9 +93,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DATA-02 | Phase 2 | Complete |
 | DATA-03 | Phase 2 | Complete |
 | DATA-04 | Phase 2 | Complete |
-| NAV-01 | Phase 2 | Pending |
-| NAV-02 | Phase 4 | Pending |
-| NAV-03 | Phase 2 | Pending |
+| NAV-01 | Phase 2 | Complete |
+| NAV-02 | Phase 4 | Complete |
+| NAV-03 | Phase 2 | Complete |
 | LIST-01 | Phase 3 | Pending |
 | LIST-02 | Phase 3 | Pending |
 | LIST-03 | Phase 3 | Pending |
