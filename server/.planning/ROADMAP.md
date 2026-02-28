@@ -138,5 +138,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 4. Seed Data | 1/1 | Complete   | 2026-02-26 |
 | 5. Strategy Pattern | 1/1 | Complete   | 2026-02-26 |
 | 6. Calculators | 1/1 | Complete   | 2026-02-28 |
-| 7. Scoring Service | 1/2 | In Progress | - |
+| 7. Scoring Service | 2/2 | Complete   | 2026-02-28 |
 | 8. API Layer | 0/? | Not started | - |

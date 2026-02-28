@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-28T14:54:11.485Z"
+last_updated: "2026-02-28T15:16:15.038Z"
 progress:
   total_phases: 7
   completed_phases: 7
-  total_plans: 10
-  completed_plans: 10
+  total_plans: 11
+  completed_plans: 11
 ---
 
 # Project State
@@ -53,6 +53,7 @@ Progress: [███████░░░] 87%
 - Trend: fast and stable
 
 *Updated after each plan completion*
+| Phase 07-scoring-service P02 | 3 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,7 @@ Recent decisions affecting current work:
 - [06-01]: BonusPointCalculator dedup uses array<string, int> map keyed by language() string — correct dedup key per spec (not cert type)
 - [07-01]: Extracted ProgramRegistryInterface, BasePointCalculatorInterface, BonusPointCalculatorInterface — final concrete classes cannot be mocked by Mockery; interfaces enable full test isolation
 - [07-01]: AdmissionScoringService injects interfaces not concrete classes — follows existing ProgramRequirementsInterface pattern in app/Contracts/
+- [Phase 07-scoring-service]: Interface bindings use FQCNs inline in AppServiceProvider::register() — no use imports, singleton over bind for stateless services
 
 ### Pending Todos
 
