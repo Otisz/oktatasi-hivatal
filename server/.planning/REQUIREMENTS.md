@@ -56,11 +56,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API
 
-- [ ] **API-01**: GET /api/v1/applicants returns list of applicants with programme details (university, faculty, name)
-- [ ] **API-02**: GET /api/v1/applicants/{applicant}/score returns { data: { osszpontszam, alappont, tobbletpont } } on success (200)
-- [ ] **API-03**: AdmissionException subclasses render as 422 JSON { error: "<Hungarian message>" } via bootstrap/app.php
-- [ ] **API-04**: Unknown applicant returns 404 (Laravel default model binding)
-- [ ] **API-05**: ProgramRegistry bound as singleton in AppServiceProvider
+- [x] **API-01**: GET /api/v1/applicants returns list of applicants with programme details (university, faculty, name)
+- [x] **API-02**: GET /api/v1/applicants/{applicant}/score returns { data: { osszpontszam, alappont, tobbletpont } } on success (200)
+- [x] **API-03**: AdmissionException subclasses render as 422 JSON { error: "<Hungarian message>" } via bootstrap/app.php
+- [x] **API-04**: Unknown applicant returns 404 (Laravel default model binding)
+- [x] **API-05**: ProgramRegistry bound as singleton in AppServiceProvider
 
 ### Testing
 
@@ -133,11 +133,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VAL-03 | Phase 7 | Complete |
 | VAL-04 | Phase 7 | Complete |
 | VAL-05 | Phase 7 | Complete |
-| API-01 | Phase 8 | Pending |
-| API-02 | Phase 8 | Pending |
-| API-03 | Phase 8 | Pending |
-| API-04 | Phase 8 | Pending |
-| API-05 | Phase 8 | Pending |
+| API-01 | Phase 8 | Complete |
+| API-02 | Phase 8 | Complete |
+| API-03 | Phase 8 | Complete |
+| API-04 | Phase 8 | Complete |
+| API-05 | Phase 8 | Complete |
 | TEST-01 | Phase 2 | Complete |
 | TEST-02 | Phase 2 | Complete |
 | TEST-03 | Phase 2 | Complete |

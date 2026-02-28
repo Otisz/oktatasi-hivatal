@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-02-28T15:19:22.190Z"
+status: active
+last_updated: "2026-02-28T15:39:00Z"
 progress:
-  total_phases: 7
-  completed_phases: 7
-  total_plans: 11
-  completed_plans: 11
+  total_phases: 8
+  completed_phases: 8
+  total_plans: 12
+  completed_plans: 12
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-25)
 
 **Core value:** Correct, rule-compliant admission score calculation — the scoring engine must enforce all Hungarian admission rules in the right order and produce exact expected results for every test case.
-**Current focus:** Phase 7 — Scoring Service
+**Current focus:** Phase 8 — API Layer (COMPLETE)
 
 ## Current Position
 
-Phase: 7 of 8 (Scoring Service) — Plan 1 COMPLETE
+Phase: 8 of 8 (API Layer) — Plan 1 COMPLETE
 Plan: 1 of 1 in current phase — COMPLETE
-Status: Phase 7 plan 1 complete — ready for next phase
-Last activity: 2026-02-28 — Completed 07-01 (AdmissionScoringService)
+Status: Phase 8 plan 1 complete — all phases complete
+Last activity: 2026-02-28 — Completed 08-01 (API Layer)
 
-Progress: [███████░░░] 87%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -47,6 +47,7 @@ Progress: [███████░░░] 87%
 | 05-strategy-pattern | 1 | 1 min | 1 min |
 | 06-calculators | 1 | 1 min | 1 min |
 | 07-scoring-service | 1 | 9 min | 9 min |
+| 08-api-layer | 1 | 1 min | 1 min |
 
 **Recent Trend:**
 - Last 5 plans: 9min, 1min, 1min, 1min, 2min
@@ -92,6 +93,8 @@ Recent decisions affecting current work:
 - [07-01]: Extracted ProgramRegistryInterface, BasePointCalculatorInterface, BonusPointCalculatorInterface — final concrete classes cannot be mocked by Mockery; interfaces enable full test isolation
 - [07-01]: AdmissionScoringService injects interfaces not concrete classes — follows existing ProgramRequirementsInterface pattern in app/Contracts/
 - [Phase 07-scoring-service]: Interface bindings use FQCNs inline in AppServiceProvider::register() — no use imports, singleton over bind for stateless services
+- [08-01]: ScoreResource accesses Score VO methods via $this->resource->method() — JsonResource proxies property access but not method calls on non-Model resources
+- [08-01]: Pint fully_qualified_strict_types fixer rewrites closure type hints — unqualified names used in bootstrap/app.php exception rendering closure
 
 ### Pending Todos
 
@@ -106,5 +109,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed 07-01-PLAN.md (AdmissionScoringService)
-Resume file: .planning/phases/07-scoring-service/
+Stopped at: Completed 08-01-PLAN.md (API Layer)
+Resume file: .planning/phases/08-api-layer/
