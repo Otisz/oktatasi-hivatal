@@ -17,7 +17,7 @@ final class ApplicantSeeder extends Seeder
         /**
          * Applicant 1 — expected outcome: 470 points (370 base + 100 bonus).
          */
-        $applicant1 = Applicant::create([
+        $applicant1 = Applicant::query()->create([
             'id' => Applicant::CASE_1_UUID,
             'program_id' => ProgramSeeder::ELTE_IK_UUID,
         ]);
@@ -35,7 +35,7 @@ final class ApplicantSeeder extends Seeder
          * Applicant 2 — expected outcome: 476 points (376 base + 100 bonus).
          * Same as Applicant 1 plus fizika at közép 98%.
          */
-        $applicant2 = Applicant::create([
+        $applicant2 = Applicant::query()->create([
             'id' => Applicant::CASE_2_UUID,
             'program_id' => ProgramSeeder::ELTE_IK_UUID,
         ]);
@@ -54,7 +54,7 @@ final class ApplicantSeeder extends Seeder
          * Applicant 3 — expected outcome: MissingGlobalMandatorySubjectException.
          * Only 3 exams — missing magyar nyelv és irodalom and történelem.
          */
-        $applicant3 = Applicant::create([
+        $applicant3 = Applicant::query()->create([
             'id' => Applicant::CASE_3_UUID,
             'program_id' => ProgramSeeder::ELTE_IK_UUID,
         ]);
@@ -69,7 +69,7 @@ final class ApplicantSeeder extends Seeder
         /**
          * Applicant 4 — expected outcome: FailedExamException (magyar nyelv és irodalom at 15%, below 20% threshold).
          */
-        $applicant4 = Applicant::create([
+        $applicant4 = Applicant::query()->create([
             'id' => Applicant::CASE_4_UUID,
             'program_id' => ProgramSeeder::ELTE_IK_UUID,
         ]);

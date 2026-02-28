@@ -22,9 +22,7 @@ final readonly class DatabaseProgramRequirements implements ProgramRequirementsI
             fn (ProgramSubject $subject): bool => RequirementType::Mandatory === $subject->requirement_type
         );
 
-        if (null === $mandatory) {
-            throw new UnknownProgramException;
-        }
+        throw_if(null === $mandatory, UnknownProgramException::class);
 
         return $mandatory->subject_name;
     }
