@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-28T18:52:30.331Z"
+last_updated: "2026-02-28T18:56:20.840Z"
 progress:
   total_phases: 4
   completed_phases: 4
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-28)
 
 **Core value:** A clean, responsive UI that lets users quickly view any applicant's admission score breakdown.
-**Current focus:** v1.0 MVP — Phase 3: Applicant List View (Plan 03-01 complete)
+**Current focus:** v1.0 MVP — COMPLETE. All phases delivered.
 
 ## Current Position
 
-Phase: 3 of 4 (Applicant List View)
-Plan: 1 of 1 (03-01 complete)
-Status: Executing
-Last activity: 2026-02-28 — Plan 03-01 complete: ApplicantsView.vue with loading skeleton, empty state, error state, and click-to-navigate cards
+Phase: 4 of 4 (Score Detail View)
+Plan: 1 of 1 (04-01 complete)
+Status: Complete
+Last activity: 2026-02-28 — Plan 04-01 complete: ApplicantDetailView.vue with hero score, breakdown cards, amber domain error card, loading skeleton, and back navigation
 
-Progress: [██████░░░░] ~60%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -46,7 +46,7 @@ Progress: [██████░░░░] ~60%
 | Phase 02-routing-and-data-layer P02 | 2 | 2 tasks | 2 files |
 | Phase 02-routing-and-data-layer P01 | 2 | 2 tasks | 8 files |
 | Phase 03-applicant-list-view P01 | 15 | 2 tasks | 1 files |
-| Phase 04-score-detail-view P01 | 7 | 1 tasks | 1 files |
+| Phase 04-score-detail-view P01 | 10 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -72,6 +72,7 @@ Recent decisions affecting current work:
 - [Phase 03-applicant-list-view]: Inline SVG icons for empty/error states — avoids icon library dependency for two low-frequency icons
 - [Phase 04-score-detail-view]: Programme context sourced synchronously from ['applicants'] TanStack Query cache via useQueryClient().getQueryData() — no extra network call needed
 - [Phase 04-score-detail-view]: Domain error (422) branch MUST precede generic error branch in v-else-if chain — reversed order prevents amber card rendering
+- [Phase 04-score-detail-view]: isLoading (not isPending) used for skeleton guard — prevents skeleton flash on back-navigation with cached data (consistent with Phase 03)
 
 ### Pending Todos
 
@@ -85,6 +86,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed 03-01-PLAN.md — Applicant list view with loading skeleton, empty state, error state, and click-to-navigate cards
+Stopped at: Completed 04-01-PLAN.md — Score detail view with hero score, breakdown cards, amber domain error card, loading skeleton, and back navigation
 Resume file: None
-Next action: Phase 3 complete — move to Phase 4: Score Detail View (ApplicantDetailView.vue consumer of useApplicantScore)
+Next action: v1.0 MVP complete — all 4 phases delivered. Full end-to-end user flow verified in browser.
