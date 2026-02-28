@@ -2,37 +2,27 @@
 
 ## What This Is
 
-A Vue 3 single-page application that provides a user interface for the Hungarian university admission score calculator API. Users browse a list of pre-seeded applicants, select one, and view their calculated admission score breakdown — or a styled error explaining why the score cannot be calculated.
+A Vue 3 single-page application that provides a user interface for the Hungarian university admission score calculator API. Users browse a list of pre-seeded applicants, select one, and view their calculated admission score breakdown — or a styled Hungarian error message explaining why the score cannot be calculated.
 
 ## Core Value
 
 A clean, responsive UI that lets users quickly view any applicant's admission score breakdown without needing to interact with the API directly.
 
-## Current Milestone: v1.0 MVP
-
-**Goal:** Deliver a working Vue 3 frontend that consumes both API endpoints and presents score results (or errors) in a polished, responsive layout.
-
-**Target features:**
-- Applicant list view with programme details
-- Score calculation result view (base points, bonus points, total)
-- Styled error display for validation failures (Hungarian text from API)
-- Responsive layout with Tailwind CSS
-
 ## Requirements
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Applicant list view consuming GET /api/v1/applicants — v1.1
+- ✓ Score view consuming GET /api/v1/applicants/{id}/score — v1.1
+- ✓ Error state display for 422 responses — v1.1
+- ✓ Responsive Tailwind CSS layout — v1.1
+- ✓ TypeScript types matching API response shapes — v1.1
+- ✓ TanStack Query for data fetching with Axios HTTP client — v1.1
+- ✓ Biome for linting and formatting — v1.1
 
 ### Active
 
-- [ ] Applicant list view consuming GET /api/v1/applicants
-- [ ] Score view consuming GET /api/v1/applicants/{id}/score
-- [ ] Error state display for 422 responses
-- [ ] Responsive Tailwind CSS layout
-- [ ] TypeScript types matching API response shapes
-- [ ] TanStack Query for data fetching with Axios HTTP client
-- [ ] Biome for linting and formatting
+(None — planning next milestone)
 
 ### Out of Scope
 
@@ -41,12 +31,19 @@ A clean, responsive UI that lets users quickly view any applicant's admission sc
 - Internationalisation — UI follows API's Hungarian-language domain errors
 - Server-side rendering — SPA is sufficient for this use case
 - State management library (Pinia) — TanStack Query handles server state, app state is minimal
-- Unit/E2E testing — deferred to v1.1
 - ESLint/Prettier — replaced by Biome
+- Client-side search/filter — small seeded dataset, not needed until list grows
+- Pagination — API returns all applicants in one call, dataset is small
+- Real-time polling / WebSocket — static seeded data, no live updates needed
+- Offline / PWA support — data-display tool fully dependent on API
 
 ## Context
 
-**API Base URL:** Configurable via environment variable (e.g., `VITE_API_BASE_URL`).
+Shipped v1.1 MVP with 354 LOC (TypeScript/Vue/CSS).
+Tech stack: Vue 3.5, Vite 7.3, TypeScript 5.8, Tailwind CSS v4, TanStack Query (Vue), Axios, Biome 2.4, Vue Router 5.
+All 22 requirements validated. 3 minor tech debt items from audit (dead import, stale docs).
+
+**API Base URL:** Configurable via environment variable (`VITE_API_BASE_URL`).
 
 **API Endpoints:**
 
@@ -84,14 +81,6 @@ A clean, responsive UI that lets users quickly view any applicant's admission sc
 }
 ```
 
-**Possible 422 error messages (all Hungarian):**
-- Failed exam (below 20%): `"nem lehetséges a pontszámítás a {subject} tárgyból elért 20% alatti eredmény miatt"`
-- Missing global mandatory subject: `"nem lehetséges a pontszámítás a kötelező érettségi tárgyak hiánya miatt"`
-- Missing programme mandatory subject: `"nem lehetséges a pontszámítás a {subject} tárgy hiánya miatt"`
-- Wrong level for mandatory subject: `"nem lehetséges a pontszámítás a {subject} tárgy szintje miatt"`
-- Missing elective subject: `"nem lehetséges a pontszámítás az elektív tárgy hiánya miatt"`
-- Unknown programme: `"nem lehetséges a pontszámítás az ismeretlen program miatt"`
-
 **Server project:** Sibling directory at `<git-root>/server/` — Laravel 12 REST API with SQLite, Pest 4 tests.
 
 ## Constraints
@@ -108,12 +97,16 @@ A clean, responsive UI that lets users quickly view any applicant's admission sc
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Standalone project (not Laravel Vite integration) | Client and server are independently deployable | — Pending |
-| Tailwind CSS over component library | Lightweight, full control over design | — Pending |
-| Hungarian error messages displayed as-is | Matches API domain language, no translation layer needed | — Pending |
-| TanStack Query over hand-rolled composables | Built-in caching, loading/error states, retry logic | — Pending |
-| Axios over native Fetch | Auto-throws on 4xx/5xx, cleaner 422 handling | — Pending |
-| Biome over ESLint/Prettier | Single tool for linting + formatting, faster | — Pending |
+| Standalone project (not Laravel Vite integration) | Client and server are independently deployable | ✓ Good — clean separation |
+| Tailwind CSS over component library | Lightweight, full control over design | ✓ Good — 354 LOC with polished UI |
+| Hungarian error messages displayed as-is | Matches API domain language, no translation layer needed | ✓ Good — amber card renders verbatim |
+| TanStack Query over hand-rolled composables | Built-in caching, loading/error states, retry logic | ✓ Good — cached back-nav, no skeleton flash |
+| Axios over native Fetch | Auto-throws on 4xx/5xx, cleaner 422 handling | ✓ Good — isAxiosError enables clean discrimination |
+| Biome over ESLint/Prettier | Single tool for linting + formatting, faster | ✓ Good — zero violations throughout |
+| isLoading over isPending for skeleton guard | Prevents skeleton flash on cached back-navigation | ✓ Good — smooth UX on back-nav |
+| ScoreError discriminated union (domain/generic) | Exhaustive error handling in components | ✓ Good — clean v-else-if branching |
+| Programme context from TanStack Query cache | No extra network call for data already loaded | ✓ Good — synchronous read from cache |
+| 30-min staleTime for QueryClient | Seeded dataset is static, doesn't change | ✓ Good — minimal re-fetching |
 
 ---
-*Last updated: 2026-02-28 after milestone v1.0 started*
+*Last updated: 2026-02-28 after v1.1 milestone*
