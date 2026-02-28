@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-28T18:03:54.491Z"
+last_updated: "2026-02-28T18:04:45.579Z"
 progress:
   total_phases: 2
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -44,6 +44,7 @@ Progress: [████░░░░░░] ~36%
 
 *Updated after each plan completion*
 | Phase 02-routing-and-data-layer P02 | 2 | 2 tasks | 2 files |
+| Phase 02-routing-and-data-layer P01 | 2 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,7 @@ Recent decisions affecting current work:
 - [Phase 02-routing-and-data-layer]: ScoreError discriminated union (kind: domain | generic) for 422 vs generic error discrimination in useApplicantScore
 - [Phase 02-routing-and-data-layer]: axios imported only for isAxiosError static type guard in useApplicantScore — one allowed exception to no-direct-axios rule
 - [Phase 02-routing-and-data-layer]: MaybeRefOrGetter<string> + computed queryKey for reactive id in useApplicantScore
+- [Phase 02-routing-and-data-layer]: Vue Router uses createWebHistory (history mode) for clean URLs; catch-all redirects silently to /applicants (no 404 page); progress bar is a Tailwind-only implementation with isNavigating ref; staleTime updated to 30 min for static seeded data
 
 ### Pending Todos
 
