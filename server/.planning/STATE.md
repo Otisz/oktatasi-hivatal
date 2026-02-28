@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-26T15:46:56.497Z"
+last_updated: "2026-02-28T14:11:00.000Z"
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 8
-  completed_plans: 8
+  total_phases: 8
+  completed_phases: 6
+  total_plans: 9
+  completed_plans: 9
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-25)
 
 **Core value:** Correct, rule-compliant admission score calculation — the scoring engine must enforce all Hungarian admission rules in the right order and produce exact expected results for every test case.
-**Current focus:** Phase 5 — Strategy Pattern
+**Current focus:** Phase 6 — Calculators
 
 ## Current Position
 
-Phase: 5 of 8 (Strategy Pattern) — Plan 1 COMPLETE
+Phase: 6 of 8 (Calculators) — Plan 1 COMPLETE
 Plan: 1 of 1 in current phase — COMPLETE
-Status: Phase 5 plan 1 complete — ready for next plan or phase
-Last activity: 2026-02-26 — Completed 05-01 (ProgramRequirementsInterface, DatabaseProgramRequirements, ProgramRegistry)
+Status: Phase 6 plan 1 complete — ready for next phase
+Last activity: 2026-02-28 — Completed 06-01 (BasePointCalculator, BonusPointCalculator)
 
-Progress: [█████░░░░░] 56%
+Progress: [██████░░░░] 67%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: 2 min
-- Total execution time: 0.22 hours
+- Total execution time: 0.24 hours
 
 **By Phase:**
 
@@ -45,9 +45,10 @@ Progress: [█████░░░░░] 56%
 | 03-database-schema-and-models | 2 | 4 min | 2 min |
 | 04-seed-data | 1 | 3 min | 3 min |
 | 05-strategy-pattern | 1 | 1 min | 1 min |
+| 06-calculators | 1 | 1 min | 1 min |
 
 **Recent Trend:**
-- Last 5 plans: 1min, 1min, 2min, 3min, 1min
+- Last 5 plans: 1min, 1min, 1min, 2min, 3min
 - Trend: fast and stable
 
 *Updated after each plan completion*
@@ -84,6 +85,8 @@ Recent decisions affecting current work:
 - [04-01]: DatabaseSeeder has no WithoutModelEvents trait — models have no observers per Phase 3 locked decision
 - [05-01]: Closure-based enum filtering over Collection::firstWhere/where — avoids loose equality edge cases with enum instances set via setAttribute
 - [05-01]: getMandatorySubjectLevel() duplicates closure lookup instead of calling getMandatorySubject() — avoids triggering UnknownProgramException when only level is needed
+- [06-01]: BasePointCalculator/BonusPointCalculator are final class (not readonly) — no constructor properties; no-arg constructors prohibited by project rules
+- [06-01]: BonusPointCalculator dedup uses array<string, int> map keyed by language() string — correct dedup key per spec (not cert type)
 
 ### Pending Todos
 
@@ -97,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-26
-Stopped at: Completed 05-01-PLAN.md (ProgramRequirementsInterface, DatabaseProgramRequirements, ProgramRegistry)
-Resume file: .planning/phases/05-strategy-pattern/
+Last session: 2026-02-28
+Stopped at: Completed 06-01-PLAN.md (BasePointCalculator, BonusPointCalculator)
+Resume file: .planning/phases/06-calculators/

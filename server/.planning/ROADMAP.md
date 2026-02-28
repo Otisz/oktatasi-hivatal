@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Database Schema and Models** - Five migrations, five Eloquent models with typed relationships, factories (completed 2026-02-26)
 - [x] **Phase 4: Seed Data** - Two programmes and four acceptance-test applicants seeded in correct FK order (completed 2026-02-26)
 - [x] **Phase 5: Strategy Pattern** - ProgramRequirementsInterface, DatabaseProgramRequirements, ProgramRegistry with unit tests (completed 2026-02-26)
-- [ ] **Phase 6: Calculators** - BasePointCalculator and BonusPointCalculator with unit tests for all formula and edge cases
+- [x] **Phase 6: Calculators** - BasePointCalculator and BonusPointCalculator with unit tests for all formula and edge cases (completed 2026-02-28)
 - [ ] **Phase 7: Scoring Service** - AdmissionScoringService orchestrating VO mapping, validation chain, and calculators
 - [ ] **Phase 8: API Layer** - Controller, resource, routes, exception renderer, service provider wiring, acceptance tests
 
@@ -135,6 +135,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 3. Database Schema and Models | 2/2 | Complete   | 2026-02-26 |
 | 4. Seed Data | 1/1 | Complete   | 2026-02-26 |
 | 5. Strategy Pattern | 1/1 | Complete   | 2026-02-26 |
-| 6. Calculators | 0/1 | Not started | - |
+| 6. Calculators | 1/1 | Complete   | 2026-02-28 |
 | 7. Scoring Service | 0/? | Not started | - |
 | 8. API Layer | 0/? | Not started | - |
