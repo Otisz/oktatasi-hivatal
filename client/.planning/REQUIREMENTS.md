@@ -11,13 +11,13 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **INFRA-01**: Project scaffolded with Vue 3 + Vite + TypeScript + Tailwind CSS v4
 - [x] **INFRA-02**: Biome configured for linting and formatting (replaces ESLint/Prettier)
-- [ ] **INFRA-03**: API base URL configurable via `VITE_API_BASE_URL` environment variable
-- [ ] **INFRA-04**: TypeScript interfaces defined for all API response shapes (`Applicant`, `Program`, `ScoreResult`, `ApiError`)
-- [ ] **INFRA-05**: Axios HTTP client instance configured with base URL from environment
+- [x] **INFRA-03**: API base URL configurable via `VITE_API_BASE_URL` environment variable
+- [x] **INFRA-04**: TypeScript interfaces defined for all API response shapes (`Applicant`, `Program`, `ScoreResult`, `ApiError`)
+- [x] **INFRA-05**: Axios HTTP client instance configured with base URL from environment
 
 ### Data Fetching
 
-- [ ] **DATA-01**: TanStack Query (Vue) configured as the data fetching/caching layer
+- [x] **DATA-01**: TanStack Query (Vue) configured as the data fetching/caching layer
 - [ ] **DATA-02**: Query for listing applicants consuming GET /api/v1/applicants
 - [ ] **DATA-03**: Query for fetching applicant score consuming GET /api/v1/applicants/{id}/score
 - [ ] **DATA-04**: 422 domain errors distinguished from network errors in score query
@@ -86,10 +86,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | INFRA-01 | Phase 1 | Complete (01-01) |
 | INFRA-02 | Phase 1 | Complete (01-01) |
-| INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| INFRA-05 | Phase 1 | Pending |
-| DATA-01 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Complete |
+| INFRA-04 | Phase 1 | Complete |
+| INFRA-05 | Phase 1 | Complete |
+| DATA-01 | Phase 1 | Complete |
 | DATA-02 | Phase 2 | Pending |
 | DATA-03 | Phase 2 | Pending |
 | DATA-04 | Phase 2 | Pending |
