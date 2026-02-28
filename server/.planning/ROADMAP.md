@@ -108,7 +108,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. MissingProgramMandatorySubjectException, ProgramMandatorySubjectLevelException, and MissingElectiveSubjectException are thrown in steps 3-5 respectively
   4. calculateForApplicant() returns a Score VO with correct basePoints and bonusPoints when all validation passes
   5. AdmissionScoringServiceTest passes with all exception paths and the success path covered
-**Plans**: TBD
+**Plans**: 2 plans
+  - [x] 07-01-PLAN.md — TDD AdmissionScoringService with 5-step validation chain and calculator delegation
+  - [ ] 07-02-PLAN.md — Gap closure: register interface-to-concrete singleton bindings in AppServiceProvider
 
 ### Phase 8: API Layer
 **Goal**: Two HTTP endpoints are live, exception rendering is wired, and all four acceptance cases plus the 404 case pass in feature tests
@@ -136,5 +138,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 4. Seed Data | 1/1 | Complete   | 2026-02-26 |
 | 5. Strategy Pattern | 1/1 | Complete   | 2026-02-26 |
 | 6. Calculators | 1/1 | Complete   | 2026-02-28 |
-| 7. Scoring Service | 1/1 | Complete   | 2026-02-28 |
+| 7. Scoring Service | 1/2 | In Progress | - |
 | 8. API Layer | 0/? | Not started | - |
