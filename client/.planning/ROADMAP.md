@@ -56,7 +56,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Clicking any applicant row navigates to `/applicants/:id` for that applicant
   4. When the API returns an empty array, an empty state message is shown instead of a blank list
   5. The layout is readable on a mobile viewport (single column) and a desktop viewport without horizontal scrolling
-**Plans**: TBD
+**Plans**: 1 plan
+  - [ ] 03-01-PLAN.md — Applicant list view with loading skeleton, empty state, error state, and click-to-navigate cards
 
 ### Phase 4: Score Detail View
 **Goal**: Users can view an applicant's full score breakdown or a clear error message explaining why the score cannot be calculated, and return to the list
