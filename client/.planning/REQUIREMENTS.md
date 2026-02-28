@@ -18,9 +18,9 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Data Fetching
 
 - [x] **DATA-01**: TanStack Query (Vue) configured as the data fetching/caching layer
-- [ ] **DATA-02**: Query for listing applicants consuming GET /api/v1/applicants
-- [ ] **DATA-03**: Query for fetching applicant score consuming GET /api/v1/applicants/{id}/score
-- [ ] **DATA-04**: 422 domain errors distinguished from network errors in score query
+- [x] **DATA-02**: Query for listing applicants consuming GET /api/v1/applicants
+- [x] **DATA-03**: Query for fetching applicant score consuming GET /api/v1/applicants/{id}/score
+- [x] **DATA-04**: 422 domain errors distinguished from network errors in score query
 
 ### Navigation
 
@@ -90,9 +90,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFRA-04 | Phase 1 | Complete |
 | INFRA-05 | Phase 1 | Complete |
 | DATA-01 | Phase 1 | Complete |
-| DATA-02 | Phase 2 | Pending |
-| DATA-03 | Phase 2 | Pending |
-| DATA-04 | Phase 2 | Pending |
+| DATA-02 | Phase 2 | Complete |
+| DATA-03 | Phase 2 | Complete |
+| DATA-04 | Phase 2 | Complete |
 | NAV-01 | Phase 2 | Pending |
 | NAV-02 | Phase 4 | Pending |
 | NAV-03 | Phase 2 | Pending |

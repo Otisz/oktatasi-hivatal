@@ -77,6 +77,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-02-28 |
-| 2. Routing and Data Layer | 0/2 | Planned | - |
+| 2. Routing and Data Layer | 1/2 | In Progress|  |
 | 3. Applicant List View | TBD | Not started | - |
 | 4. Score Detail View | TBD | Not started | - |

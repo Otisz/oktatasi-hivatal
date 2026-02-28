@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-28T17:08:04.014Z"
+last_updated: "2026-02-28T18:03:54.491Z"
 progress:
-  total_phases: 1
+  total_phases: 2
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 4
+  completed_plans: 3
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-28)
 
 **Core value:** A clean, responsive UI that lets users quickly view any applicant's admission score breakdown.
-**Current focus:** v1.0 MVP — Phase 1: Foundation (Plans 01-01 and 01-02 complete)
+**Current focus:** v1.0 MVP — Phase 2: Routing and Data Layer (Plans 02-01 and 02-02 complete)
 
 ## Current Position
 
-Phase: 1 of 4 (Foundation)
-Plan: 2 of — (01-01 and 01-02 complete)
+Phase: 2 of 4 (Routing and Data Layer)
+Plan: 2 of 2 (02-01 complete, 02-02 complete)
 Status: Executing
-Last activity: 2026-02-28 — Plan 01-02 complete: Axios HTTP client + TanStack Query + typed API interfaces
+Last activity: 2026-02-28 — Plan 02-02 complete: useApplicants and useApplicantScore composables with 422 discrimination
 
-Progress: [██░░░░░░░░] ~9%
+Progress: [████░░░░░░] ~36%
 
 ## Performance Metrics
 
@@ -43,6 +43,7 @@ Progress: [██░░░░░░░░] ~9%
 | 01-foundation | 2 | 8 min | 4 min |
 
 *Updated after each plan completion*
+| Phase 02-routing-and-data-layer P02 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -60,6 +61,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Hungarian field names (osszpontszam, alappont, tobbletpont) used verbatim in ScoreResult — must match Laravel API Resources exactly to avoid silent undefined
 - [Phase 01-foundation]: Single Axios instance from @/lib/http with VITE_API_BASE_URL — never import axios directly in feature code
 - [Phase 01-foundation]: TanStack Query: VueQueryPlugin registered before mount with explicit QueryClient (5-min staleTime for read-only seeded dataset)
+- [Phase 02-routing-and-data-layer]: ScoreError discriminated union (kind: domain | generic) for 422 vs generic error discrimination in useApplicantScore
+- [Phase 02-routing-and-data-layer]: axios imported only for isAxiosError static type guard in useApplicantScore — one allowed exception to no-direct-axios rule
+- [Phase 02-routing-and-data-layer]: MaybeRefOrGetter<string> + computed queryKey for reactive id in useApplicantScore
 
 ### Pending Todos
 
@@ -73,6 +77,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed 01-02-PLAN.md — Axios HTTP client + TanStack Query + typed API interfaces
+Stopped at: Completed 02-02-PLAN.md — TanStack Query data composables: useApplicants and useApplicantScore with 422 discrimination
 Resume file: None
-Next action: Execute next Phase 1 plan (if any) or move to Phase 2: Feature Layer
+Next action: Phase 2 complete — move to Phase 3: List View (useApplicants consumer) or Phase 4: Score Detail View
